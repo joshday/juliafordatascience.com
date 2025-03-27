@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+JuliaForDataScience.com is a project by Josh Day ([Github](https://github.com/joshday))

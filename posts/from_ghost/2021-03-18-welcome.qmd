@@ -1,0 +1,31 @@
+---
+date: 2021-03-18
+draft: false
+image: "https://images.unsplash.com/photo-1489945052260-4f21c52268b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDI1fHxoZWxsb3xlbnwwfHx8fDE2MTY2OTkzOTk&ixlib=rb-1.2.1&q=80&w=2000"
+---
+
+# Welcome!
+
+Thanks for checking out the Julia for Data Science Newsletter!
+
+We post high-quality articles to help you learn Julia with an emphasis on data science. Articles range from:
+
+- Installing and Setting Up Julia.
+- ⚡ Performance Tips.
+- ❤️ Tours of Cool Julia Packages.
+- In-Depth Tutorials.
+- And more!
+
+## What Brought You Here?
+
+We want to know! We're just starting out and would love to hear what you want to learn about. Contact us at:
+
+Twitter: [@JuliaForDataSci](https://twitter.com/JuliaForDataSci)
+
+## Thanks!
+
+Thanks for checking out Julia For Data Science.
+
+## Sign up for more like this.
+
+Enter your email Subscribe

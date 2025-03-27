@@ -1,0 +1,19 @@
+---
+date: 2015-10-02
+categories: [R, heyjoshday.com]
+draft: false
+image: https://towardsdatascience.com/wp-content/uploads/2020/11/1nrWncnoJ4V_BkzEf1pd4MA.png
+---
+
+# GLMNet Tutorial
+Recently, a friend informed me that something I created for [NC State's Statistical Learning Group](https://jbpost2.github.io/pages/StatisticalLearningGroup.html) comes up on a google search for "glmnet tutorial".  In fall 2014, I gave an introduction to penalized regression, focusing on LASSO, Ridge, and Elastic Net.
+
+The link that comes up is a tutorial on how to use R's well known [`glmnet`](https://cran.r-project.org/web/packages/glmnet/index.html) package.  Besides giving examples of how to use glmnet, it runs through a three simulations where there is a clear winner between the three competitors.
+
+- [Regularized Regression Slides](https://jbpost2.github.io/files/SLGfiles/josh/SLG-09_26_14-V2.html#1)
+- [GLMNet Tutorial](/assets/html/slg_penalized_regression.html)
+
+
+:::{.callout-note}
+2025-03-26 Addendum: Original post was edited with updated links.
+:::

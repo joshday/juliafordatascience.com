@@ -1,0 +1,24 @@
+---
+date: 2019-01-22
+categories: [heyjoshday.com]
+draft: false
+image: https://github.com/user-attachments/assets/64afef93-1ed3-4c83-bf48-fa7390d11515
+---
+
+# One Click Tuner
+
+This is a bit off topic for me, but I recently created an iOS Tuner app ([App Store Link](https://apps.apple.com/us/app/one-click-tuner/id1448329781)) after not being satisfied with the other tuner apps out there (I play guitar).  It was an excuse to learn some swift/signal processing as well as design a new kind of tuner display that I think is a bit more insightful than the norm:
+
+
+```{=html}
+<div style="border-radius:32px;background:black;margin-bottom:16px;display:flex;justify-content:center;align-items:center;">
+    <img src="https://oneclicktuner.com/images/hero.gif" class="preview-image" style="margin:auto; height: 500px; width: auto; border-radius: 15px; padding:32px;">
+</div>
+```
+
+I've written a few more details about it at [the app's website](https://oneclicktuner.com).
+
+
+:::{.callout-note}
+Since the original post, I've rewritten the app using [SwiftUI](https://developer.apple.com/xcode/swiftui/).
+:::
