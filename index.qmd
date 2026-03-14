@@ -20,4 +20,3 @@ listing:
   <img src="/assets/images/hero_img.png" style="height:128px; margin: 10% 10% 10% 10%;">
 </div>
 ```
-p

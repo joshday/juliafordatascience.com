@@ -6,7 +6,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "Welcome to the new open source web site.  See the announcement [here](/posts/2025/2025-03-26-new-site.qmd)!"
+    content: "Welcome to the new open source web site.  See the announcement [here](/posts/2025/2025-03-26-new-site/)!"
     type: primary
     position: below-navbar
   site-url: http://juliafordatascience.com

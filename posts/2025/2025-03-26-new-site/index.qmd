@@ -7,7 +7,7 @@ image: https://images.unsplash.com/photo-1620924049153-4d32fcbe88fe?q=80&w=2942&
 
 # New Website!
 
-[juliafordatascience.com](../index.qmd) has changed its tech stack.  While a very cool platform, we decided to move off the [Ghost.org](https://ghost.org) platform and rely solely on open source tools.  We're going all in on [Quarto](https://quarto.org).  Why?
+[juliafordatascience.com](https://juliafordatascience.com) has changed its tech stack.  While a very cool platform, we decided to move off the [Ghost.org](https://ghost.org) platform and rely solely on open source tools.  We're going all in on [Quarto](https://quarto.org).  Why?
 
 1. **No Vendor Lock-In:** We don't want to be locked into a proprietary platfrom.
 2. **Version Control:** There's no method of versioning in Ghost.  Quarto uses an extension of markdown.
