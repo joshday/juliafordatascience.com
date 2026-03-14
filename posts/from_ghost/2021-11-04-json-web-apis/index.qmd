@@ -11,7 +11,7 @@ A common way to access data is through web APIs that return a JSON response. Thi
 
 ```{julia}
 #| output: false
-using HTTP, JSON3
+using HTTP, JSON
 ```
 
 ## Getting the Data
@@ -27,10 +27,10 @@ res = HTTP.get("https://xkcd.com/552/info.0.json");
 
 ## Parsing JSON Responses
 
-The [JSON3.jl](https://github.com/quinnj/JSON3.jl) package handles JSON interpretation:
+The [JSON.jl](https://github.com/JuliaIO/JSON.jl) package handles JSON interpretation:
 
 ```{julia}
-JSON3.read(res.body)
+JSON.parse(String(res.body))
 ```
 
 ## Creating a User-Friendly Interface
@@ -39,12 +39,12 @@ A custom struct simplifies access:
 
 ```{julia}
 struct Comic
-    json::JSON3.Object
+    json::Dict
 end
 
-Comic() = Comic(JSON3.read(HTTP.get("https://xkcd.com/info.0.json").body))
+Comic() = Comic(JSON.parse(String(HTTP.get("https://xkcd.com/info.0.json").body)))
 
-Comic(i::Int) = Comic(JSON3.read(HTTP.get("https://xkcd.com/$i/info.0.json").body))
+Comic(i::Int) = Comic(JSON.parse(String(HTTP.get("https://xkcd.com/$i/info.0.json").body)))
 ```
 
 Obtaining comic metadata becomes as simple as `Comic(552)`:
@@ -62,7 +62,7 @@ For APIs requiring keys, use environment variables to avoid accidental version c
 function Comic(i::Int)
     apikey = ENV["MY_API_KEY"]
     url = "https://xkcd.com/$i/info.0.json?apikey=$apikey"
-    data = JSON3.read(HTTP.get(url).body)
+    data = JSON.parse(String(HTTP.get(url).body))
     Comic(data)
 end
 ```
@@ -75,10 +75,10 @@ Create custom HTML rendering for notebooks and Pluto environments:
 function Base.show(io::IO, ::MIME"text/html", c::Comic)
     show(io, MIME"text/html"(), HTML("""
        <div>
-        <h2><code>XKCD.Comic</code> $(c.json.num): $(c.json.title)</h2>
-        <img src="$(c.json.img)" alt="$(c.json.alt)" title="$(c.json.alt)">
+        <h2><code>XKCD.Comic</code> $(c.json["num"]): $(c.json["title"])</h2>
+        <img src="$(c.json["img"])" alt="$(c.json["alt"])" title="$(c.json["alt"])">
         <div>
-          <a href="https://xkcd.com/$(c.json.num)">
+          <a href="https://xkcd.com/$(c.json["num"])">
             Link to Original
           </a>
         </div>
