@@ -40,7 +40,10 @@ jobs:
         uses: julia-actions/setup-julia@v1
 
       - name: Install Julia packages
-        run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
+        run: |
+          find . -name "Project.toml" | while read f; do
+            julia --project="$(dirname "$f")" -e 'using Pkg; Pkg.instantiate()'
+          done
 
       # See more at https://github.com/quarto-dev/quarto-actions/blob/main/examples/example-03-dependencies.md
 
