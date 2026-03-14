@@ -324,7 +324,7 @@ Tip
 <span id="cb10-8"><a href="#cb10-8"></a>data <span class="op">=</span> <span class="fu">randn</span>(<span class="fl">10</span><span class="op">^</span><span class="fl">6</span>);</span>
 <span id="cb10-9"><a href="#cb10-9"></a><span class="pp">@time</span> <span class="fu">add100_slow!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.452869 seconds (239.40 k allocations: 774.794 MiB, 54.07% gc time, 16.46% compilation time)</code></pre>
+<pre><code>  0.650240 seconds (239.40 k allocations: 774.794 MiB, 67.62% gc time, 11.04% compilation time)</code></pre>
 </div>
 </div>
 <p><strong>Problems identified:</strong></p>
@@ -343,7 +343,7 @@ Tip
 <span id="cb12-4"><a href="#cb12-4"></a></span>
 <span id="cb12-5"><a href="#cb12-5"></a><span class="pp">@time</span> <span class="fu">add100_fast!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.021879 seconds (109.85 k allocations: 5.465 MiB, 98.57% compilation time)</code></pre>
+<pre><code>  0.022383 seconds (109.85 k allocations: 5.465 MiB, 98.51% compilation time)</code></pre>
 </div>
 </div>
 <hr>
@@ -361,26 +361,26 @@ Tip
 <span id="cb14-4"><a href="#cb14-4"></a>y <span class="op">=</span> <span class="fu">sin</span>.(<span class="fu">abs</span>.(x)) <span class="op">.+</span> <span class="fl">1</span> <span class="op">./</span> (<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100-element Vector{Float64}:
- 1.892828162668217
- 1.0100123874142835
- 0.5048956791490719
- 1.1212660060355284
- 1.1722388553416403
- 0.412685960889347
- 0.3361505942097932
- 0.4413324208658533
- 1.0452862397085283
- 0.9679328455639697
+ 1.9734897966680673
+ 1.303118948242644
+ 1.214878144676042
+ 1.2489075917955366
+ 1.0921468180034613
+ 0.5975049411899233
+ 1.1420230718723197
+ 0.6925703780775888
+ 0.468962915759076
+ 0.4115614372577926
  ⋮
- 0.5668226075367578
- 0.7556548734657301
- 1.0049220315791627
- 0.4368277723531861
- 0.6079395632981562
- 0.7459186941117413
- 0.9473973707486762
- 0.26263549850840395
- 1.0034110189802155</code></pre>
+ 0.07796458480282331
+ 0.7402747091232766
+ 0.9858574799328568
+ 1.0026363904464732
+ 0.2751238367407908
+ 0.14013615223589806
+ 0.12952673379581495
+ 0.14903623299842583
+ 0.3591222304586297</code></pre>
 </div>
 </div>
 </section>
@@ -420,9 +420,9 @@ Tip
 <span id="cb20-5"><a href="#cb20-5"></a><span class="fu">view</span>(x, <span class="op">:</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>)    <span class="co"># View — no copy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3×2 view(::Matrix{Float64}, :, 1:2) with eltype Float64:
-  0.459284  0.0853237
- -0.783598  0.182441
-  1.13636   0.639005</code></pre>
+ 0.0783662  -0.472103
+ 1.97693    -0.210538
+ 1.60763    -0.610471</code></pre>
 </div>
 </div>
 <p><strong>Access Elements Sequentially:</strong></p>
