@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Using JSON Web APIs from Julia</h1>
 <p>A common way to access data is through web APIs that return a JSON response. This article demonstrates implementing a user-friendly wrapper for the XKCD webcomic’s API using Julia.</p>
 <div id="2" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">using</span> <span class="bu">HTTP</span>, <span class="bu">JSON3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">using</span> <span class="bu">HTTP</span>, <span class="bu">JSON</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="getting-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="getting-the-data">Getting the Data</h2>
@@ -226,22 +226,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="parsing-json-responses" class="level2">
 <h2 class="anchored" data-anchor-id="parsing-json-responses">Parsing JSON Responses</h2>
-<p>The <a href="https://github.com/quinnj/JSON3.jl">JSON3.jl</a> package handles JSON interpretation:</p>
+<p>The <a href="https://github.com/JuliaIO/JSON.jl">JSON.jl</a> package handles JSON interpretation:</p>
 <div id="6" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1"></a>JSON3.<span class="fu">read</span>(res.body)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1"></a>JSON.<span class="fu">parse</span>(<span class="fu">String</span>(res.body))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>JSON3.Object{Vector{UInt8}, Vector{UInt64}} with 11 entries:
-  :month      =&gt; "3"
-  :num        =&gt; 552
-  :link       =&gt; ""
-  :year       =&gt; "2009"
-  :news       =&gt; ""
-  :safe_title =&gt; "Correlation"
-  :transcript =&gt; "[[A man is talking to a woman]]\nMan: I used to think correla…
-  :alt        =&gt; "Correlation doesn't imply causation, but it does waggle its e…
-  :img        =&gt; "https://imgs.xkcd.com/comics/correlation.png"
-  :title      =&gt; "Correlation"
-  :day        =&gt; "6"</code></pre>
+<pre><code>JSON.Object{String, Any} with 11 entries:
+  "month"      =&gt; "3"
+  "num"        =&gt; 552
+  "link"       =&gt; ""
+  "year"       =&gt; "2009"
+  "news"       =&gt; ""
+  "safe_title" =&gt; "Correlation"
+  "transcript" =&gt; "[[A man is talking to a woman]]\nMan: I used to think correl…
+  "alt"        =&gt; "Correlation doesn't imply causation, but it does waggle its …
+  "img"        =&gt; "https://imgs.xkcd.com/comics/correlation.png"
+  "title"      =&gt; "Correlation"
+  "day"        =&gt; "6"</code></pre>
 </div>
 </div>
 </section>
@@ -250,12 +250,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A custom struct simplifies access:</p>
 <div id="8" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">struct</span> Comic</span>
-<span id="cb5-2"><a href="#cb5-2"></a>    json<span class="op">::</span><span class="dt">JSON3.Object</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>    json<span class="op">::</span><span class="dt">Dict</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="kw">end</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">Comic</span>() <span class="op">=</span> <span class="fu">Comic</span>(JSON3.<span class="fu">read</span>(HTTP.<span class="fu">get</span>(<span class="st">"https://xkcd.com/info.0.json"</span>).body))</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">Comic</span>() <span class="op">=</span> <span class="fu">Comic</span>(JSON.<span class="fu">parse</span>(<span class="fu">String</span>(HTTP.<span class="fu">get</span>(<span class="st">"https://xkcd.com/info.0.json"</span>).body)))</span>
 <span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">Comic</span>(i<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> <span class="fu">Comic</span>(JSON3.<span class="fu">read</span>(HTTP.<span class="fu">get</span>(<span class="st">"https://xkcd.com/</span><span class="sc">$</span>i<span class="st">/info.0.json"</span>).body))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">Comic</span>(i<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> <span class="fu">Comic</span>(JSON.<span class="fu">parse</span>(<span class="fu">String</span>(HTTP.<span class="fu">get</span>(<span class="st">"https://xkcd.com/</span><span class="sc">$</span>i<span class="st">/info.0.json"</span>).body)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>Comic</code></pre>
 </div>
@@ -264,19 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="10" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">Comic</span>(<span class="fl">552</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>Comic({
-        "month": "3",
-          "num": 552,
-         "link": "",
-         "year": "2009",
-         "news": "",
-   "safe_title": "Correlation",
-   "transcript": "[[A man is talking to a woman]]\nMan: I used to think correlation implied causation.\nMan: Then I took a statistics class.  Now I don't.\nWoman: Sounds like the class helped.\nMan: Well, maybe.\n{{Title text: Correlation doesn't imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing 'look over there'.}}",
-          "alt": "Correlation doesn't imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing 'look over there'.",
-          "img": "https://imgs.xkcd.com/comics/correlation.png",
-        "title": "Correlation",
-          "day": "6"
-})</code></pre>
+<pre><code>Comic(Dict{String, Any}("day" =&gt; "6", "alt" =&gt; "Correlation doesn't imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing 'look over there'.", "year" =&gt; "2009", "num" =&gt; 552, "link" =&gt; "", "safe_title" =&gt; "Correlation", "img" =&gt; "https://imgs.xkcd.com/comics/correlation.png", "news" =&gt; "", "month" =&gt; "3", "title" =&gt; "Correlation"…))</code></pre>
 </div>
 </div>
 </section>
@@ -287,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">function</span> <span class="fu">Comic</span>(i<span class="op">::</span><span class="dt">Int</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>    apikey <span class="op">=</span> <span class="cn">ENV</span>[<span class="st">"MY_API_KEY"</span>]</span>
 <span id="cb9-3"><a href="#cb9-3"></a>    url <span class="op">=</span> <span class="st">"https://xkcd.com/</span><span class="sc">$</span>i<span class="st">/info.0.json?apikey=</span><span class="sc">$</span>apikey<span class="st">"</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>    data <span class="op">=</span> JSON3.<span class="fu">read</span>(HTTP.<span class="fu">get</span>(url).body)</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    data <span class="op">=</span> JSON.<span class="fu">parse</span>(<span class="fu">String</span>(HTTP.<span class="fu">get</span>(url).body))</span>
 <span id="cb9-5"><a href="#cb9-5"></a>    <span class="fu">Comic</span>(data)</span>
 <span id="cb9-6"><a href="#cb9-6"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -299,10 +287,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">show</span>(io<span class="op">::</span><span class="dt">IO</span>, <span class="op">::</span><span class="dt">MIME"text/html"</span>, c<span class="op">::</span><span class="dt">Comic</span>)</span>
 <span id="cb10-2"><a href="#cb10-2"></a>    <span class="fu">show</span>(io, MIME<span class="st">"text/html"</span>(), <span class="fu">HTML</span>(<span class="st">"""</span></span>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="st">       &lt;div&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="st">        &lt;h2&gt;&lt;code&gt;XKCD.Comic&lt;/code&gt; </span><span class="sc">$</span>(c.json.num)<span class="st">: </span><span class="sc">$</span>(c.json.title)<span class="st">&lt;/h2&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="st">        &lt;img src="</span><span class="sc">$</span>(c.json.img)<span class="st">" alt="</span><span class="sc">$</span>(c.json.alt)<span class="st">" title="</span><span class="sc">$</span>(c.json.alt)<span class="st">"&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="st">        &lt;h2&gt;&lt;code&gt;XKCD.Comic&lt;/code&gt; </span><span class="sc">$</span>(c.json[<span class="st">"num"</span>])<span class="st">: </span><span class="sc">$</span>(c.json[<span class="st">"title"</span>])<span class="st">&lt;/h2&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="st">        &lt;img src="</span><span class="sc">$</span>(c.json[<span class="st">"img"</span>])<span class="st">" alt="</span><span class="sc">$</span>(c.json[<span class="st">"alt"</span>])<span class="st">" title="</span><span class="sc">$</span>(c.json[<span class="st">"alt"</span>])<span class="st">"&gt;</span></span>
 <span id="cb10-6"><a href="#cb10-6"></a><span class="st">        &lt;div&gt;</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="st">          &lt;a href="https://xkcd.com/</span><span class="sc">$</span>(c.json.num)<span class="st">"&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="st">          &lt;a href="https://xkcd.com/</span><span class="sc">$</span>(c.json[<span class="st">"num"</span>])<span class="st">"&gt;</span></span>
 <span id="cb10-8"><a href="#cb10-8"></a><span class="st">            Link to Original</span></span>
 <span id="cb10-9"><a href="#cb10-9"></a><span class="st">          &lt;/a&gt;</span></span>
 <span id="cb10-10"><a href="#cb10-10"></a><span class="st">        &lt;/div&gt;</span></span>
