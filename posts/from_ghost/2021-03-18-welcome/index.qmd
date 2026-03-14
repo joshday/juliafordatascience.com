@@ -11,8 +11,8 @@ Thanks for checking out the Julia for Data Science Newsletter!
 We post high-quality articles to help you learn Julia with an emphasis on data science. Articles range from:
 
 - Installing and Setting Up Julia.
-- ⚡ Performance Tips.
-- ❤️ Tours of Cool Julia Packages.
+- Performance Tips.
+- Tours of Cool Julia Packages.
 - In-Depth Tutorials.
 - And more!
 

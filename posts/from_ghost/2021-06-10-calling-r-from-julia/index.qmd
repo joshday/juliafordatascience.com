@@ -1,0 +1,106 @@
+---
+date: 2021-06-10
+categories: [R, RCall.jl, interop]
+image: https://images.unsplash.com/photo-1515879218367-8466d910aaa4
+---
+
+# Calling R From Julia
+
+Julia's younger ecosystem sometimes lacks packages for specialized tasks. The solution: leverage R packages directly from Julia through [RCall.jl](https://github.com/JuliaInterop/RCall.jl), enabling seamless interoperability between the two languages.
+
+## Installation
+
+```julia
+] add RCall
+```
+
+## Running R Code from Julia
+
+### Interactive Mode (REPL)
+
+After importing RCall, access the R REPL by typing `$`. The prompt switches from `julia>` to `R>`, allowing native R commands:
+
+```julia
+julia> using RCall
+
+# type `$` to enter R mode
+
+R> install.packages("ggplot2")
+
+R> library(ggplot2)
+
+R> data(diamonds)
+
+R> ggplot(diamonds, aes(x=carat, y=price)) + geom_point()
+```
+
+### Non-Interactive Mode
+
+The `@R_str` macro executes R code programmatically:
+
+```julia
+julia> R"y = 2"
+RObject{RealSxp}
+[1] 2
+```
+
+## Sending Julia Variables to R
+
+### Using `@rput`
+
+```julia
+julia> x = 1
+1
+
+julia> @rput x
+1
+
+R> x
+[1] 1
+```
+
+### String Interpolation
+
+```julia
+julia> x = 1
+1
+
+julia> R"y = $x"
+RObject{IntSxp}
+[1] 1
+
+R> 1 + $x
+[1] 2
+```
+
+## Retrieving R Variables in Julia
+
+### Using `@rget`
+
+```julia
+julia> R"z = 5"
+RObject{RealSxp}
+[1] 5
+
+julia> @rget z
+5.0
+
+julia> z
+5.0
+```
+
+### Using `rcopy()`
+
+```julia
+julia> robj = R"z"
+RObject{RealSxp}
+[1] 5
+
+julia> rcopy(robj)
+5.0
+```
+
+## Resources
+
+- [RCall Documentation](https://juliainterop.github.io/RCall.jl/stable/)
+- [Type Conversions Guide](https://juliainterop.github.io/RCall.jl/stable/custom/)

@@ -1,0 +1,37 @@
+---
+date: 2021-11-09
+categories: [cheatsheet, resources]
+image: https://images.unsplash.com/photo-1456324504439-367cee3b3c32
+---
+
+# Cheatsheets
+
+A collection of Julia cheatsheet resources created by community members.
+
+---
+
+## Julia and Comparisons to Other Languages
+
+- **[Fast Track to Julia](https://juliadocs.github.io/Julia-Cheat-Sheet/)** — Collaborative resource covering fundamental Julia concepts.
+
+- **[Julia/Python/R Side-by-side](https://github.com/sswatson/cheatsheets/blob/master/jpr-cheatsheet.pdf)** — Comparison guide enabling developers to reference syntax across three popular data science languages.
+
+- **[Matlab-Python-Julia Cheatsheet](https://cheatsheets.quantecon.org/)** — QuantEcon collaborative project helping users transition between these technical computing platforms.
+
+- **[Noteworthy Differences from other Languages](https://docs.julialang.org/en/v1/manual/noteworthy-differences/)** — Official Julia documentation highlighting unique language features and behavioral differences.
+
+---
+
+## Specific Packages
+
+- **[Basic Commands in Pluto.jl](https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%94%8E-Basic-Commands-in-Pluto)** — Guide for the interactive notebook environment.
+
+- **[Data Wrangling with DataFrames.jl](https://ahsmart.com/assets/pages/data-wrangling-with-data-frames-jl-cheat-sheet/DataFramesCheatSheet_v1.x_rev1.pdf)** — PDF reference focused on data manipulation techniques.
+
+- **[Makie.jl Examples](http://juliaplots.org/MakieReferenceImages/gallery/index.html)** — Visual gallery showcasing visualization capabilities.
+
+- **[Plots.jl](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf)** — Reference for the Plots.jl package.
+
+---
+
+Know a cheatsheet that should be on this list? Reach out on Twitter [@JuliaForDataSci](https://twitter.com/JuliaForDataSci).

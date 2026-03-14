@@ -10,6 +10,9 @@ website:
     type: primary
     position: below-navbar
   site-url: http://juliafordatascience.com
+  draft-mode: visible
+  search:
+    type: textbox
   navbar:
     background: dark
     left:
@@ -32,8 +35,14 @@ format:
     code-copy: true
     mainfont: Inter
     lang: en
+    highlight-style: atom-one-dark
+    code-block-bg: dark
+    code-line-numbers: true
     resources:
       - "assets/"
     theme: cosmo
-    css: [styles.css, https://rsms.me/inter/inter.css, https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css]
+    css:
+      - styles.css
+      - https://rsms.me/inter/inter.css
+      # - https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
     toc: true

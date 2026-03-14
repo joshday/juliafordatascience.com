@@ -1,10 +1,10 @@
 ---
 pagetitle: "Julia for Data Science"
 listing:
-  contents: ["posts/*.qmd", "posts/*/*.qmd"]
+  contents: ["posts/*.qmd", "posts/*/*.qmd", "posts/*/*/*.qmd"]
   type: default # or `default` or `table`; each type has its own set of yaml options to include
   sort: "date desc" # can also sort on more than one field
-  categories: true # allows you to sort posts by assigned categories
+  categories: false
   fields: [image, title, date, categories, reading-time]
   feed: true
   table-hover: true
@@ -20,3 +20,4 @@ listing:
   <img src="/assets/images/hero_img.png" style="height:128px; margin: 10% 10% 10% 10%;">
 </div>
 ```
+p

@@ -1,0 +1,68 @@
+---
+date: 2021-05-07
+categories: [Plots.jl, visualization, animations]
+image: https://images.unsplash.com/photo-1551288049-bebda4e38f71
+engine: julia
+---
+
+# Animations with Plots.jl
+
+```{julia}
+#| output: false
+using Plots, Random
+```
+
+## Why Animations are Great
+
+Effective communication represents an undervalued competency in data science. Animations tell a story that static images are unable to tell by adding an extra dimension (often time). Beyond narrative value, animated visualizations demonstrably enhance audience engagement compared to static imagery, making them valuable for presentation purposes.
+
+## Animations with Plots.jl
+
+[Plots.jl](https://github.com/JuliaPlots/Plots.jl) offers unified syntax across multiple plotting backends while providing straightforward utilities for generating animated GIFs. The authors recommend using [Pluto](https://github.com/fonsp/Pluto.jl) notebooks for animation development, as visualizations render directly in the notebook environment.
+
+### Method 1: The `@gif` Macro (Simplest)
+
+```{julia}
+@gif for i in 1:50
+    plot(sin, 0, i * 2pi / 10)
+end
+```
+
+Add conditional flags to control frame inclusion:
+
+```{julia}
+@gif for i in 1:50
+    plot(sin, 0, i * 2pi / 10)
+end when i > 30
+```
+
+### Method 2: The `@animate` Macro (FPS Control)
+
+```{julia}
+anim = @animate for i in 1:50
+    Random.seed!(123)
+    scatter(cumsum(randn(i)), ms=i, lab="", alpha = 1 - i/50,
+        xlim=(0,50), ylim=(-5, 7))
+end
+
+gif(anim, fps=50)
+```
+
+### Method 3: Direct `Plots.Animation` (Maximum Control)
+
+```{julia}
+a = Animation()
+
+for i in 1:10
+    plt = bar(1:i, ylim=(0,10), xlim=(0,10), lab="")
+    frame(a, plt)
+end
+
+gif(a)
+```
+
+---
+
+## Additional Resources
+
+- [Plots.jl Animation Documentation](http://docs.juliaplots.org/latest/animations/)

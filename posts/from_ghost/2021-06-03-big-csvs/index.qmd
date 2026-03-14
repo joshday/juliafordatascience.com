@@ -1,0 +1,64 @@
+---
+date: 2021-06-03
+categories: [CSV, data, big data, OnlineStats.jl]
+image: https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3
+engine: julia
+---
+
+# Big CSVs
+
+"Big data" can be defined as any dataset requiring you to change how you analyze it because of its size.
+
+---
+
+## Small CSVs: `CSV.File`
+
+For datasets comfortably fitting in memory, the [CSV package](https://github.com/JuliaData/CSV.jl) offers `CSV.File()` for high-performance file reading:
+
+- Automatically determines column types
+- Creates objects loadable into DataFrames
+- Supports numerous formatting options
+
+```{julia}
+using CSV, DataFrames, Plots, Downloads
+
+url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv"
+
+file = CSV.File(Downloads.download(url))
+
+df = DataFrame(file)
+
+plot(df.date, df.cases, title="Cumulative COVID-19 Cases in the US",
+    lab="", ylab="N", xlab="Date")
+```
+
+---
+
+## Large CSVs: `CSV.Rows`
+
+For massive files, `CSV.Rows` creates a memory-efficient iterator loading one row at a time. All data appears as strings requiring manual type parsing.
+
+---
+
+## CSV Combined with OnlineStats
+
+The [OnlineStats](https://github.com/joshday/OnlineStats.jl) package provides fast single-pass algorithms using constant memory, enabling statistics calculation on infinitely-sized datasets.
+
+```julia
+using CSV, OnlineStats, Plots
+
+rows = CSV.Rows("/path/to/large_file.csv", reusebuffer=true)
+
+itr = (parse(Int, r.passenger_count) => parse(Float64, r.fare_amount)
+    for r in rows)
+
+o = GroupBy(Int, Hist(0:.5:100))
+
+fit!(o, itr)
+
+plot(plot(o[1]), plot(o[2]), plot(o[3]), plot(o[4]),
+    layout=(4,1), link=:all, lab=[1 2 3 4]
+)
+```
+
+The example above examines NYC taxi data to visualize fare distributions by passenger count — processing arbitrarily large files with constant memory usage.

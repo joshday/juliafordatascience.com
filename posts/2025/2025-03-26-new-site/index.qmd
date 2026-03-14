@@ -5,7 +5,7 @@ categories: [announcement]
 image: https://images.unsplash.com/photo-1620924049153-4d32fcbe88fe?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-# New Website
+# New Website!
 
 [juliafordatascience.com](../index.qmd) has changed its tech stack.  While a very cool platform, we decided to move off the [Ghost.org](https://ghost.org) platform and rely solely on open source tools.  We're going all in on [Quarto](https://quarto.org).  Why?
 

@@ -1,0 +1,72 @@
+---
+date: 2021-03-25
+categories: [first steps, quickstart, primer]
+image: https://images.unsplash.com/photo-1558395556-da76deb52b24
+---
+
+# First Steps with Julia
+
+If you're looking to try out Julia, here's the first few things to do.
+
+:::{.callout-note}
+- This post is compiled from the "First Steps" series that appeared in the original version of the Julia For Data Science newsletter.
+- It has been updated and condensed for 2025.
+:::
+
+## Download Julia
+
+To download Julia, use the instructions at [https://julialang.org/downloads](https://julialang.org/downloads).  For convenience, we'll repeat the installation method most people will use:
+
+
+::: {.panel-tabset}
+
+## Mac/Unix/Linux
+
+- Copy/paste in terminal:
+
+```bash
+curl -fsSL https://install.julialang.org | sh
+```
+
+## Windows
+
+- Copy/paste in Windows Command Prompt:
+
+```cmd
+winget install julia -s msstore
+```
+:::
+
+The above command will install the [juliaup](https://github.com/JuliaLang/juliaup){target="_blank"} installation manager for Julia.  This is generally recommended over a manual download since juliaup will let you know when new versions are available.
+
+::: {.callout-tip}
+Open the Julia [REPL](https://docs.julialang.org/en/v1/stdlib/REPL/){target="_blank"} (read-eval-print-loop) by typing `julia` in the terminal.
+:::
+
+## Install Packages
+
+Julia has an amazing package manager: [Pkg](https://pkgdocs.julialang.org/v1/){target="_blank"} (more on Pkg in a future post) that has two methods of operation:
+
+
+::: {.panel-tabset}
+
+## Pkg
+
+```julia
+julia> using Pkg
+
+julia> Pkg.add("StatsBase")
+```
+
+## Pkg REPL Mode
+```julia
+julia>
+
+(@v1.11) pkg> # type ']' to enter Pkg mode
+
+(@v1.11) pkg> add StatsBase
+
+julia>  # type backspace to go back to Julia mode
+```
+
+:::

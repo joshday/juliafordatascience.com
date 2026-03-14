@@ -1,0 +1,97 @@
+---
+date: 2021-08-17
+categories: [JuliaCon, talks, data science]
+image: https://images.unsplash.com/photo-1540575467063-178a50c2df87
+---
+
+# The Best Data Science Talks of JuliaCon 2021
+
+JuliaCon 2021 featured a wide range of talks. Here's a curated selection of the most useful for practicing data scientists, with difficulty ratings: beginner, intermediate, or advanced.
+
+---
+
+### Applied Measure Theory for Probabilistic Modeling *(advanced)*
+
+**Speaker:** Chad Scherrer | [Watch on YouTube](https://www.youtube.com/watch?v=Jr6kp0cHiJA)
+
+Overview of MeasureTheory.jl advantages relative to existing distributions packages. Loosely falls under data science but great for those with a mathematical statistics focus.
+
+---
+
+### Bias Audit and Mitigation in Julia *(beginner–intermediate)*
+
+**Speaker:** Ashrya Agrawal | [Watch on YouTube](https://www.youtube.com/watch?v=Ij0exPwmT2w)
+
+Introduces Fairness.jl toolkit for auditing and mitigating machine learning bias. Great introduction to fairness/bias issues with accessible examples.
+
+---
+
+### Clearing the Pipeline Jungle with FeatureTransforms.jl *(beginner–intermediate)*
+
+**Speaker:** Glenn Moynihan | [Watch on YouTube](https://www.youtube.com/watch?v=49zKPC0r-aU)
+
+Addresses technical debt in feature engineering pipelines and demonstrates FeatureTransforms.jl solutions for sustainable practices without sacrificing flexibility.
+
+---
+
+### DataFrames.jl 1.0 Tutorial — Workshop *(beginner–intermediate)*
+
+**Speaker:** Bogumił Kamiński | [Watch on YouTube](https://www.youtube.com/watch?v=tJf24gfcSto)
+
+Comprehensive workshop on loading, transforming, and visualizing data. Assumes prior data frame experience from R or Python. [Materials available on GitHub](https://github.com/bkamins/JuliaCon2021-DataFrames-Tutorial).
+
+---
+
+### Easy, Featureful Parallelism with Dagger.jl *(advanced)*
+
+**Speaker:** Julian P Samaroo | [Watch on YouTube](https://www.youtube.com/watch?v=t3S8W6A4Ago)
+
+Advanced parallelization beyond Distributed.jl, featuring GPU support and fault tolerance. Recommended for those struggling with Julia's distributed computing primitives.
+
+---
+
+### Introduction to Bayesian Data Analysis — Workshop *(intermediate–advanced)*
+
+**Speakers:** Kusti Skytén, Chad Scherrer, Tor Fjelde | [Watch on YouTube](https://www.youtube.com/watch?v=W_ExvidyESg)
+
+In-depth tutorial on applied Bayesian workflows using increasingly sophisticated models. Compares Julia's probabilistic programming advantages over Stan and Python.
+
+---
+
+### Pluto – One Year Later *(beginner–intermediate)*
+
+**Speaker:** Fons van der Plas | [Watch on YouTube](https://www.youtube.com/watch?v=HiI4jgDyDhY)
+
+Update on Pluto.jl, the interactive Julia notebook IDE. Strongly recommended for those frequently working in notebook environments.
+
+---
+
+### Rewriting Pieces of a Python Codebase in Julia *(intermediate)*
+
+**Speaker:** Satvik Souza Beri | [Watch on YouTube](https://www.youtube.com/watch?v=EnkfGuH6Qhg)
+
+Practical guidance on migrating Python code to Julia using PyCall and PyJulia, with documented 10x-30x performance improvements. Covers gotchas and optimal use cases.
+
+---
+
+### The State of DataFrames.jl *(beginner)*
+
+**Speaker:** Bogumił Kamiński | [Watch on YouTube](https://www.youtube.com/watch?v=ErAAV4u2Fuk)
+
+Discusses DataFrames.jl design philosophy, recent changes, and future plans without heavy code focus.
+
+---
+
+### State of Julia *(intermediate)*
+
+**Speakers:** Jeff Bezanson, Stefan Karpinski, Keno Fischer, Viral Shah | [Watch on YouTube](https://www.youtube.com/watch?v=IlFVwabDh6Q)
+
+Annual retrospective by Julia's creators on development and community progress.
+
+---
+
+### Statistics with Julia from the Ground Up — Workshop *(beginner)*
+
+**Speaker:** Yoni Nazarathy | [Watch on YouTube](https://www.youtube.com/watch?v=IlPoU5Yr2QI)
+
+My top recommendation for this list — a gentle introduction that works through probability, statistics, dataframes, inference, and regression. Great entry point for statisticians new to Julia.

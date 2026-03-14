@@ -1,0 +1,146 @@
+---
+date: 2022-06-24
+categories: [artifacts, packages, Pkg]
+image: https://images.unsplash.com/photo-1586864387967-d02ef85d93e8
+---
+
+# Artifacts!
+
+## What is an Artifact?
+
+In Julia, an artifact is simply a fixed/immutable something that a package needs (that isn't Julia code). Examples include executable binaries, text files, or other immutable data.
+
+**Rules for Artifacts:**
+
+- Must be immutable
+- Must be a (optionally gzipped) tarfile (`.tar` or `.tar.gz`)
+- Must be publicly available on the internet
+
+---
+
+## What's the Point of Artifacts?
+
+### Problems with Alternatives
+
+**Storing binary data in git repos:** Git handles text files, not binary files. Each binary change requires saving an entire new version.
+
+**Using `deps/build.jl` scripts:** The previous Julia approach had several downsides:
+
+- Duplicate downloads when multiple packages share artifacts
+- Incompatibility with PackageCompiler.jl
+- Difficulty managing platform-specific dependencies
+- Manual artifact hosting requirements
+
+### Benefits of Artifact Support
+
+- Prevents git repository bloat
+- Maintains source code immutability
+- Enables dependency sharing between packages
+- Supports PackageCompiler compatibility
+- Provides robust platform-specific installation
+- Leverages Pkg server infrastructure
+
+---
+
+## Using Artifacts as a Package User
+
+Users need no involvement — Julia's package manager automatically downloads required artifacts during installation.
+
+---
+
+## Creating Artifacts as a Developer
+
+The recommended approach uses the **ArtifactUtils** package.
+
+### Step 1: Create a Package
+
+```julia
+using PkgTemplates
+
+t = Template()
+
+generate(t, "Hello")
+```
+
+### Step 2: Navigate to Package Directory
+
+```julia
+path = joinpath(homedir(), ".julia", "dev", "Hello")
+
+cd(path)
+```
+
+### Step 3: Create Artifact Content
+
+```julia
+dir = mktempdir()
+
+file = touch(joinpath(dir, "hello.txt"))
+
+open(file, "w") do io
+    write(io, "Hello!  I am an artifact!")
+end
+```
+
+### Step 4: Generate Artifact ID
+
+```julia
+using ArtifactUtils
+
+artifact_id = artifact_from_directory(dir)
+```
+
+### Step 5: Upload Artifact
+
+```julia
+gist = upload_to_gist(artifact_id)
+```
+
+::: {.callout-note}
+Requires SSH key setup with GitHub.
+:::
+
+### Step 6: Create Artifacts.toml
+
+```julia
+add_artifact!("Artifacts.toml", "hello_artifact", gist)
+```
+
+### Step 7: Use Artifact in Package
+
+```julia
+sourcecode = """
+module Hello
+
+using Artifacts
+
+function __init__()
+    path = joinpath(artifact"hello_artifact", "hello.txt")
+
+    println(read(path, String))
+end
+
+end #module
+"""
+
+open(io -> write(io, sourcecode), joinpath("src", "Hello.jl"), "w")
+```
+
+### Step 8: Add Dependencies
+
+```julia
+using Pkg
+
+Pkg.activate(".")
+
+Pkg.add("Artifacts")
+
+Pkg.instantiate()
+```
+
+## Result
+
+```julia
+julia> using Hello
+Hello!  I am an artifact!
+```

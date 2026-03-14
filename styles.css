@@ -1,10 +1,15 @@
+.sourceCode {
+    border-radius: 4px;
+}
+
+/*------------------------------------------------------------- Navbar */
 .navbar {
     padding-top: 0px;
     padding-bottom: 0px;
     background-color: black;
 }
 
-/*------------------------------------------------------------- Listing Page*/
+/*------------------------------------------------------------- Listing Page */
 h3.listing-title {
     font-size: xx-large;
 }
