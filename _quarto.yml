@@ -3,12 +3,6 @@ project:
 
 website:
   title: "Julia for Data Science"
-  announcement:
-    icon: info-circle
-    dismissable: true
-    content: "Welcome to the new open source web site.  See the announcement [here](/posts/2025/2025-03-26-new-site/)!"
-    type: primary
-    position: below-navbar
   site-url: http://juliafordatascience.com
   draft-mode: visible
   search:
@@ -22,12 +16,6 @@ website:
         href: https://github.com/joshday/juliafordatascience.com
       - icon: twitter
         href: https://twitter.com/JuliaForDataSci
-  page-footer:
-    background: dark
-    left: "Copyright 2025, Josh Day"
-    right:
-      - icon: github
-        href: https://github.com/joshday/juliafordatascience.com
 
 
 format:
@@ -35,8 +23,6 @@ format:
     code-copy: true
     mainfont: Inter
     lang: en
-    highlight-style: atom-one-dark
-    code-block-bg: dark
     code-line-numbers: true
     resources:
       - "assets/"
