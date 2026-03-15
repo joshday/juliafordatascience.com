@@ -3,13 +3,13 @@ date: 2021-05-07
 categories: [Plots.jl, visualization, animations]
 image: https://images.unsplash.com/photo-1551288049-bebda4e38f71
 engine: julia
-freeze: auto
 ---
 
 # Animations with Plots.jl
 
 ```{julia}
 #| output: false
+ENV["GKSwstype"] = "nul"
 using Plots, Random
 ```
 
