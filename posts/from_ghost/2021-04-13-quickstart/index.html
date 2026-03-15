@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-0b13ecc5f7468cf4c177ba78e9cbc90b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-53ea66801c803034fdd837dd2704c587.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,6 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../../../assets/custom.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -135,7 +136,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="../../../index.xml" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-rss"></i></a>
     <a href="https://github.com/joshday/juliafordatascience.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <a href="https://twitter.com/JuliaForDataSci" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
 </div>
@@ -297,26 +299,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-2"><a href="#cb9-2"></a><span class="fu">randn</span>(<span class="fl">100</span>, <span class="fl">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100×3 Matrix{Float64}:
-  0.75077     0.644874   -1.50324
- -0.931727   -1.93347    -1.72386
- -0.122195   -1.09839    -0.815259
-  2.73634    -0.812718   -0.894332
-  0.989151    1.32436    -0.208998
- -0.266122   -0.0606362  -0.531859
-  1.38481    -0.368014   -0.00963176
- -1.42079     0.382644   -0.61455
- -1.10859    -0.75638     0.990249
- -1.39893    -0.235099   -0.223119
-  ⋮                      
-  1.70488     0.53764    -0.978976
-  2.64422     0.685596    0.436043
- -0.350866   -0.636153    1.0653
- -1.62551    -0.34078    -0.185183
- -0.0810485   1.94022    -1.2704
-  0.507563   -0.848017   -0.969448
-  0.212899   -0.979422   -1.84587
-  0.757266    0.335243   -0.406069
-  0.195607    1.21305     1.79645</code></pre>
+  0.749151   -0.980386  -0.697104
+  0.675733    0.154454   1.24114
+ -1.21571     2.05963    0.58118
+ -0.939658   -0.435228   1.07384
+ -0.224161    0.582669  -0.506212
+ -0.463163    0.453924   0.295405
+  2.05096    -0.412788  -0.316454
+ -0.589701    0.303048   1.16787
+  0.604191    0.56933   -0.989729
+ -1.18052    -0.249779   0.185681
+  ⋮                     
+  1.42523    -0.508179  -0.808064
+  1.52745     0.576599  -1.14602
+  0.0496017   0.397198   0.105055
+ -0.70113    -1.67817    1.50032
+  0.413941    0.287184  -0.82135
+ -0.127686    1.5578     0.971867
+  2.12749     1.12736    0.734672
+ -0.405336   -0.313219  -0.861656
+ -0.297403    0.482581   0.562449</code></pre>
 </div>
 </div>
 </section>
@@ -328,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-2"><a href="#cb11-2"></a></span>
 <span id="cb11-3"><a href="#cb11-3"></a>x[<span class="fl">3</span>, <span class="fl">2</span>]  <span class="co"># retrieve 3rd row of column 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>0.6580658543809286</code></pre>
+<pre><code>0.6020763140447783</code></pre>
 </div>
 </div>
 </section>
@@ -554,7 +556,7 @@ Stacktrace:
 <span id="cb38-3"><a href="#cb38-3"></a>    <span class="fu">sleep</span>(<span class="fl">2</span>)</span>
 <span id="cb38-4"><a href="#cb38-4"></a><span class="cf">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  3.005200 seconds (9 allocations: 336 bytes)</code></pre>
+<pre><code>  3.005286 seconds (9 allocations: 336 bytes)</code></pre>
 </div>
 </div>
 <hr>
