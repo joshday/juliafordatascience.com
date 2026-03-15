@@ -23,7 +23,7 @@
 
 <section id="new-website" class="level1">
 <h1>New Website!</h1>
-<p><a href="../index.qmd">juliafordatascience.com</a> has changed its tech stack. While a very cool platform, we decided to move off the <a href="https://ghost.org">Ghost.org</a> platform and rely solely on open source tools. We’re going all in on <a href="https://quarto.org">Quarto</a>. Why?</p>
+<p><a href="https://juliafordatascience.com">juliafordatascience.com</a> has changed its tech stack. While a very cool platform, we decided to move off the <a href="https://ghost.org">Ghost.org</a> platform and rely solely on open source tools. We’re going all in on <a href="https://quarto.org">Quarto</a>. Why?</p>
 <ol type="1">
 <li><strong>No Vendor Lock-In:</strong> We don’t want to be locked into a proprietary platfrom.</li>
 <li><strong>Version Control:</strong> There’s no method of versioning in Ghost. Quarto uses an extension of markdown.</li>
@@ -1107,10 +1107,10 @@ font-style: inherit;">"Date"</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
-   1895.6 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerTablesExt<span class="ansi-bright-black-fg"> (serial)</span>
+   1881.5 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerTablesExt<span class="ansi-bright-black-fg"> (serial)</span>
   1 dependency successfully precompiled in 2 seconds
 <span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
-    981.9 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerLaTeXStringsExt<span class="ansi-bright-black-fg"> (serial)</span>
+    922.1 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerLaTeXStringsExt<span class="ansi-bright-black-fg"> (serial)</span>
   1 dependency successfully precompiled in 1 seconds
 </pre>
 </div>
@@ -1530,7 +1530,7 @@ font-style: inherit;">@time</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">add100_slow!</span>(data);</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.462417 seconds (239.40 k allocations: 774.792 MiB, 55.25% gc time, 16.15% compilation time)</code></pre>
+<pre><code>  0.440666 seconds (239.40 k allocations: 774.794 MiB, 55.13% gc time, 16.43% compilation time)</code></pre>
 </div>
 </div>
 <p><strong>Problems identified:</strong></p>
@@ -1565,7 +1565,7 @@ font-style: inherit;">@time</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">add100_fast!</span>(data);</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.021535 seconds (109.85 k allocations: 5.465 MiB, 98.46% compilation time)</code></pre>
+<pre><code>  0.021665 seconds (109.85 k allocations: 5.465 MiB, 98.60% compilation time)</code></pre>
 </div>
 </div>
 <hr>
@@ -1609,26 +1609,26 @@ background-color: null;
 font-style: inherit;">100</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100-element Vector{Float64}:
- 1.5621611285240435
- 1.207831440842309
- 0.6657734532266085
- 0.2773068752699648
- 0.3573585911237259
- 0.6981552800221047
- 0.5961548554932619
- 0.8652684136633888
- 0.5068481121294
- 0.5313637824520642
+ 1.1876554122182055
+ 1.2877401269433255
+ 0.9489247869461532
+ 0.34945775497390524
+ 0.687056242962701
+ 0.9708981027371623
+ 0.9684449565661812
+ 0.46022536688483995
+ 1.1062473339870116
+ 0.46270774630415124
  ⋮
- 0.6258970480666506
- 0.7094426770213403
- 0.7477365448950176
- 0.546094703976302
- 0.11894787745792969
- 1.0103091672137419
- 0.41883922578602706
- 0.2064445131339825
- 0.8873388245537303</code></pre>
+ 0.013655012938620745
+ 0.6086411624387542
+ 0.7745539296040708
+ 0.2688759990381287
+ 0.272969099392067
+ 0.6692636148948278
+ 0.732834150266175
+ 0.11289676178750963
+ 0.6937780788287198</code></pre>
 </div>
 </div>
 </section>
@@ -1722,9 +1722,9 @@ background-color: null;
 font-style: inherit;"># View — no copy</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3×2 view(::Matrix{Float64}, :, 1:2) with eltype Float64:
- 0.234037   -0.945071
- 0.746125    2.16899
- 0.0293427   2.27866</code></pre>
+ 1.54533    0.38335
+ 0.509127   0.207937
+ 1.87916   -0.745398</code></pre>
 </div>
 </div>
 <p><strong>Access Elements Sequentially:</strong></p>
@@ -1873,7 +1873,7 @@ font-style: inherit;">end</span></span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre>GKS: cannot open display - headless operation mode active
-<span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_5sZY9sn6jc.gif
+<span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_LqBaHODmRU.gif
 </pre>
 </div>
 </div>
@@ -1921,7 +1921,7 @@ background-color: null;
 font-style: inherit;">30</span></span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_TGFiNYLqj4.gif
+<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_zQBEfmDODe.gif
 </pre>
 </div>
 </div>
@@ -2009,7 +2009,7 @@ background-color: null;
 font-style: inherit;">50</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_54BuRG5iNe.gif
+<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_pYRiDUten4.gif
 </pre>
 </div>
 </div>
@@ -2078,7 +2078,7 @@ background-color: null;
 font-style: inherit;">gif</span>(a)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_f69mb43qPA.gif
+<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_ZSLWTID2pi.gif
 </pre>
 </div>
 </div>
@@ -2258,26 +2258,26 @@ background-color: null;
 font-style: inherit;">3</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100×3 Matrix{Float64}:
- -1.31855     0.125919  -0.0877235
-  0.201177    0.102665  -0.211381
-  1.1219      2.98296    0.875111
-  1.44701     1.12086    0.547387
- -0.837552   -0.697584   0.713908
- -0.705363    1.0396     1.70957
- -1.57778    -1.49646   -1.62447
- -1.1657     -0.542887   0.0783497
-  0.233278    0.155482  -0.423744
-  0.496788   -0.654564   0.176617
-  ⋮                     
-  0.186476    1.45511    0.168459
- -0.447746   -1.64816   -0.680938
- -0.445623   -0.48266   -0.548882
-  0.0194163  -1.37007   -0.310489
-  1.81278     0.871488  -0.899247
- -0.409328   -0.701326  -1.23242
-  0.796898    0.557553   1.03982
- -0.995562    0.684677  -0.433398
-  0.821544   -0.225099   0.831286</code></pre>
+  0.75077     0.644874   -1.50324
+ -0.931727   -1.93347    -1.72386
+ -0.122195   -1.09839    -0.815259
+  2.73634    -0.812718   -0.894332
+  0.989151    1.32436    -0.208998
+ -0.266122   -0.0606362  -0.531859
+  1.38481    -0.368014   -0.00963176
+ -1.42079     0.382644   -0.61455
+ -1.10859    -0.75638     0.990249
+ -1.39893    -0.235099   -0.223119
+  ⋮                      
+  1.70488     0.53764    -0.978976
+  2.64422     0.685596    0.436043
+ -0.350866   -0.636153    1.0653
+ -1.62551    -0.34078    -0.185183
+ -0.0810485   1.94022    -1.2704
+  0.507563   -0.848017   -0.969448
+  0.212899   -0.979422   -1.84587
+  0.757266    0.335243   -0.406069
+  0.195607    1.21305     1.79645</code></pre>
 </div>
 </div>
 </section>
@@ -2303,7 +2303,7 @@ font-style: inherit;">2</span>]  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># retrieve 3rd row of column 2</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>0.8582618246944606</code></pre>
+<pre><code>0.6580658543809286</code></pre>
 </div>
 </div>
 </section>
@@ -2764,7 +2764,7 @@ background-color: null;
 font-weight: bold;
 font-style: inherit;">end</span></span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  3.005192 seconds (9 allocations: 336 bytes)</code></pre>
+<pre><code>  3.005200 seconds (9 allocations: 336 bytes)</code></pre>
 </div>
 </div>
 <hr>

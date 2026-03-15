@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7fb59815a1c41eec7c034637f0c35ff0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-e2c6955db75926a14f5d8f3734380a62.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-0b13ecc5f7468cf4c177ba78e9cbc90b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -138,9 +138,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <div id="quarto-announcement" data-announcement-id="a2be8957161ff27396c9cdb5ec0e8570" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>Welcome to the new open source web site. See the announcement <a href="../../../posts/2025/2025-03-26-new-site.qmd">here</a>!</p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
@@ -323,7 +320,7 @@ Tip
 <span id="cb10-8"><a href="#cb10-8"></a>data <span class="op">=</span> <span class="fu">randn</span>(<span class="fl">10</span><span class="op">^</span><span class="fl">6</span>);</span>
 <span id="cb10-9"><a href="#cb10-9"></a><span class="pp">@time</span> <span class="fu">add100_slow!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.462417 seconds (239.40 k allocations: 774.792 MiB, 55.25% gc time, 16.15% compilation time)</code></pre>
+<pre><code>  0.440666 seconds (239.40 k allocations: 774.794 MiB, 55.13% gc time, 16.43% compilation time)</code></pre>
 </div>
 </div>
 <p><strong>Problems identified:</strong></p>
@@ -342,7 +339,7 @@ Tip
 <span id="cb12-4"><a href="#cb12-4"></a></span>
 <span id="cb12-5"><a href="#cb12-5"></a><span class="pp">@time</span> <span class="fu">add100_fast!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.021535 seconds (109.85 k allocations: 5.465 MiB, 98.46% compilation time)</code></pre>
+<pre><code>  0.021665 seconds (109.85 k allocations: 5.465 MiB, 98.60% compilation time)</code></pre>
 </div>
 </div>
 <hr>
@@ -360,26 +357,26 @@ Tip
 <span id="cb14-4"><a href="#cb14-4"></a>y <span class="op">=</span> <span class="fu">sin</span>.(<span class="fu">abs</span>.(x)) <span class="op">.+</span> <span class="fl">1</span> <span class="op">./</span> (<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100-element Vector{Float64}:
- 1.5621611285240435
- 1.207831440842309
- 0.6657734532266085
- 0.2773068752699648
- 0.3573585911237259
- 0.6981552800221047
- 0.5961548554932619
- 0.8652684136633888
- 0.5068481121294
- 0.5313637824520642
+ 1.1876554122182055
+ 1.2877401269433255
+ 0.9489247869461532
+ 0.34945775497390524
+ 0.687056242962701
+ 0.9708981027371623
+ 0.9684449565661812
+ 0.46022536688483995
+ 1.1062473339870116
+ 0.46270774630415124
  ⋮
- 0.6258970480666506
- 0.7094426770213403
- 0.7477365448950176
- 0.546094703976302
- 0.11894787745792969
- 1.0103091672137419
- 0.41883922578602706
- 0.2064445131339825
- 0.8873388245537303</code></pre>
+ 0.013655012938620745
+ 0.6086411624387542
+ 0.7745539296040708
+ 0.2688759990381287
+ 0.272969099392067
+ 0.6692636148948278
+ 0.732834150266175
+ 0.11289676178750963
+ 0.6937780788287198</code></pre>
 </div>
 </div>
 </section>
@@ -419,9 +416,9 @@ Tip
 <span id="cb20-5"><a href="#cb20-5"></a><span class="fu">view</span>(x, <span class="op">:</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>)    <span class="co"># View — no copy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3×2 view(::Matrix{Float64}, :, 1:2) with eltype Float64:
- 0.234037   -0.945071
- 0.746125    2.16899
- 0.0293427   2.27866</code></pre>
+ 1.54533    0.38335
+ 0.509127   0.207937
+ 1.87916   -0.745398</code></pre>
 </div>
 </div>
 <p><strong>Access Elements Sequentially:</strong></p>
@@ -853,26 +850,6 @@ Tip
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Copyright 2025, Josh Day</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/joshday/juliafordatascience.com">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-    </div>
-  </div>
-</footer>
 
 
 
