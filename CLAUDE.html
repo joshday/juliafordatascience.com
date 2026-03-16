@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Julia for Data Science</title>
+<title>claude – Julia for Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -69,85 +102,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-date','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="stylesheet" href="assets/custom.css">
-<link rel="alternate" type="application/rss+xml" title="Julia for Data Science" href="index.xml" data-external="1"></head>
+</head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -178,317 +139,79 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#claude.md" id="toc-claude.md" class="nav-link active" data-scroll-target="#claude.md">CLAUDE.md</a>
+  <ul class="collapse">
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview">Project Overview</a></li>
+  <li><a href="#commands" id="toc-commands" class="nav-link" data-scroll-target="#commands">Commands</a></li>
+  <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">Architecture</a></li>
+  <li><a href="#post-structure" id="toc-post-structure" class="nav-link" data-scroll-target="#post-structure">Post Structure</a></li>
+  <li><a href="#freeze-behavior" id="toc-freeze-behavior" class="nav-link" data-scroll-target="#freeze-behavior">Freeze Behavior</a></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<div style="margin-bottom:16px;border-radius:16px;background-color:#fff;background-image:url(/assets/images/topography.svg);display:flex;justify-content:center;align-items:center;">
-  <img src="./assets/images/hero_img.png" style="height:128px; margin: 10% 10% 10% 10%;">
-</div>
+<section id="claude.md" class="level1">
+<h1>CLAUDE.md</h1>
+<p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
+<section id="project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
+<p>This is a Quarto-based static blog at <a href="https://juliafordatascience.com">juliafordatascience.com</a>, deployed to GitHub Pages via GitHub Actions. Content is written in <code>.qmd</code> (Quarto Markdown) files with Julia code execution.</p>
+</section>
+<section id="commands" class="level2">
+<h2 class="anchored" data-anchor-id="commands">Commands</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Install Julia dependencies (root project)</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>. <span class="at">-e</span> <span class="st">'using Pkg; Pkg.instantiate()'</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Preview site locally with live reload</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">quarto</span> preview</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># Full render (produces _site/)</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="architecture" class="level2">
+<h2 class="anchored" data-anchor-id="architecture">Architecture</h2>
+<ul>
+<li><strong><code>_quarto.yml</code></strong> — Site-wide configuration (theme, navbar, format settings)</li>
+<li><strong><code>posts/</code></strong> — Blog posts organized in three subdirectories:
+<ul>
+<li><code>from_ghost/</code> — Posts migrated from Ghost platform</li>
+<li><code>heyjoshday.com/</code> — Posts migrated from heyjoshday.com</li>
+<li><code>2025/</code> (and future year dirs) — New posts</li>
+</ul></li>
+<li><strong><code>assets/</code></strong> — CSS, HTML templates, and images</li>
+<li><strong><code>_freeze/</code></strong> — Cached Quarto execution outputs (committed to repo; only re-rendered when source changes)</li>
+<li><strong><code>_site/</code></strong> — Build artifact (gitignored)</li>
+</ul>
+</section>
+<section id="post-structure" class="level2">
+<h2 class="anchored" data-anchor-id="post-structure">Post Structure</h2>
+<p>Each post is a directory under <code>posts/</code> containing an <code>index.qmd</code> with YAML frontmatter. Posts with Julia code have their own <code>Project.toml</code> (and optionally <code>Manifest.toml</code>) for reproducibility. The CI pipeline automatically finds and instantiates all <code>Project.toml</code> files in the repo.</p>
+</section>
+<section id="freeze-behavior" class="level2">
+<h2 class="anchored" data-anchor-id="freeze-behavior">Freeze Behavior</h2>
+<p><code>posts/_metadata.yml</code> sets <code>freeze: auto</code> — Quarto only re-executes Julia code when source files change. Frozen outputs are stored in <code>_freeze/</code> and committed to git. To force re-execution of a specific post, delete its entry in <code>_freeze/</code>.</p>
+</section>
+<section id="deployment" class="level2">
+<h2 class="anchored" data-anchor-id="deployment">Deployment</h2>
+<p>Push to <code>main</code> triggers <code>.github/workflows/Publish.yml</code>, which renders and publishes to the <code>gh-pages</code> branch automatically.</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-title" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1742947200000" data-listing-file-modified-sort="1773680553467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="86">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025/2025-03-26-new-site/index.html" class="no-external">New Website!</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/2025/2025-03-26-new-site/index.html" class="no-external">
-<div class="listing-date">
-Mar 2025
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1656028800000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="278">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2022-06-24-artifacts/index.html" class="no-external">Artifacts!</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2022-06-24-artifacts/index.html" class="no-external">
-<div class="listing-date">
-Jun 2022
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="126">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-11-09-cheatsheets/index.html" class="no-external">Cheatsheets</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-11-09-cheatsheets/index.html" class="no-external">
-<div class="listing-date">
-Nov 2021
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1635984000000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="243">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-11-04-json-web-apis/index.html" class="no-external">Using JSON Web APIs from Julia</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-11-04-json-web-apis/index.html" class="no-external">
-<div class="listing-date">
-Nov 2021
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1629158400000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="378">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-08-17-juliacon-2021-data-science-talks/index.html" class="no-external">The Best Data Science Talks of JuliaCon 2021</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-08-17-juliacon-2021-data-science-talks/index.html" class="no-external">
-<div class="listing-date">
-Aug 2021
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1623283200000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="139">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-06-10-calling-r-from-julia/index.html" class="no-external">Calling R From Julia</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-06-10-calling-r-from-julia/index.html" class="no-external">
-<div class="listing-date">
-Jun 2021
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1622678400000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="174">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-06-03-big-csvs/index.html" class="no-external">Big CSVs</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-06-03-big-csvs/index.html" class="no-external">
-<div class="listing-date">
-Jun 2021
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1621555200000" data-listing-file-modified-sort="1773680553467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="530">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-05-21-performance-tips/index.html" class="no-external">Performance Tips</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-05-21-performance-tips/index.html" class="no-external">
-<div class="listing-date">
-May 2021
-</div>
-<div class="listing-reading-time">3 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1620345600000" data-listing-file-modified-sort="1773680553467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="204">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-05-07-animations-with-plots-jl/index.html" class="no-external">Animations with Plots.jl</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-05-07-animations-with-plots-jl/index.html" class="no-external">
-<div class="listing-date">
-May 2021
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1618272000000" data-listing-file-modified-sort="1773680553467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="566">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-04-13-quickstart/index.html" class="no-external">Julia Quickstart</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-04-13-quickstart/index.html" class="no-external">
-<div class="listing-date">
-Apr 2021
-</div>
-<div class="listing-reading-time">3 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1616630400000" data-listing-file-modified-sort="1773680553467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="175">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-03-25-first-steps/index.html" class="no-external">First Steps with Julia</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-03-25-first-steps/index.html" class="no-external">
-<div class="listing-date">
-Mar 2021
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-listing-date-sort="1616025600000" data-listing-file-modified-sort="1773680553467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="86">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/from_ghost/2021-03-18-welcome/index.html" class="no-external">Welcome!</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/from_ghost/2021-03-18-welcome/index.html" class="no-external">
-<div class="listing-date">
-Mar 2021
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1548115200000" data-listing-file-modified-sort="1773680553469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="99">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/heyjoshday.com/2019-01-22-one-click-tuner/index.html" class="no-external">One Click Tuner</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/heyjoshday.com/2019-01-22-one-click-tuner/index.html" class="no-external">
-<div class="listing-date">
-Jan 2019
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="13" data-listing-date-sort="1539648000000" data-listing-file-modified-sort="1773680553469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="370">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/heyjoshday.com/2018-10-16-learning-rates/index.html" class="no-external">Choosing a Learning Rate is Hard</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/heyjoshday.com/2018-10-16-learning-rates/index.html" class="no-external">
-<div class="listing-date">
-Oct 2018
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="14" data-listing-date-sort="1534464000000" data-listing-file-modified-sort="1773680553469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="628">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/heyjoshday.com/2018-08-17-why-i-use-julia/index.html" class="no-external">Why I Use Julia</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/heyjoshday.com/2018-08-17-why-i-use-julia/index.html" class="no-external">
-<div class="listing-date">
-Aug 2018
-</div>
-<div class="listing-reading-time">4 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="15" data-listing-date-sort="1511827200000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="214">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/heyjoshday.com/2017-11-28-adagrad-has-learning-rate/index.html" class="no-external">AdaGrad has a Learning Rate</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/heyjoshday.com/2017-11-28-adagrad-has-learning-rate/index.html" class="no-external">
-<div class="listing-date">
-Nov 2017
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="16" data-listing-date-sort="1482537600000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="394">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/heyjoshday.com/2016-12-24-mm_algorithms/index.html" class="no-external">MM Algorithms</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/heyjoshday.com/2016-12-24-mm_algorithms/index.html" class="no-external">
-<div class="listing-date">
-Dec 2016
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="17" data-listing-date-sort="1443744000000" data-listing-file-modified-sort="1773680553468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/heyjoshday.com/2015-10-02-glmnet-tutorial/index.html" class="no-external">GLMNet Tutorial</a>
-</h3>
-</div>
-<div class="metadata">
-<a href="./posts/heyjoshday.com/2015-10-02-glmnet-tutorial/index.html" class="no-external">
-<div class="listing-date">
-Oct 2015
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
