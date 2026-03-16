@@ -8,7 +8,7 @@ website:
   search:
     type: textbox
   navbar:
-    background: light
+    background: "#9558B2"
     left: []
     tools:
       - icon: rss
