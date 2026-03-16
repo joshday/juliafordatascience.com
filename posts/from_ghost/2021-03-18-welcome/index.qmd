@@ -4,28 +4,22 @@ draft: false
 image: "https://images.unsplash.com/photo-1489945052260-4f21c52268b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDI1fHxoZWxsb3xlbnwwfHx8fDE2MTY2OTkzOTk&ixlib=rb-1.2.1&q=80&w=2000"
 ---
 
-# Welcome!
+# Welcome to Julia for Data Science
 
-Thanks for checking out the Julia for Data Science Newsletter!
+Julia for Data Science started in 2021 as a newsletter hosted on Ghost — a subscription platform for independent publishers. The goal was simple: high-quality articles to help people learn Julia with an emphasis on data science, covering topics like performance tips, package tours, and hands-on tutorials.
 
-We post high-quality articles to help you learn Julia with an emphasis on data science. Articles range from:
+## A New Home
 
-- Installing and Setting Up Julia.
-- Performance Tips.
-- Tours of Cool Julia Packages.
-- In-Depth Tutorials.
-- And more!
+In 2025, the site moved from Ghost to [Quarto](https://quarto.org), an open-source scientific publishing system. The motivations were straightforward:
 
-## What Brought You Here?
+- **No vendor lock-in** — content lives in plain Markdown files under version control
+- **Free to host** — deployed to GitHub Pages via GitHub Actions
+- **Better for technical content** — native support for executable Julia code, LaTeX math, and syntax highlighting
 
-We want to know! We're just starting out and would love to hear what you want to learn about. Contact us at:
+All posts from the Ghost era have been preserved and are still available here.
 
-Twitter: [@JuliaForDataSci](https://twitter.com/JuliaForDataSci)
+## Stay Updated
 
-## Thanks!
+The newsletter is no more, but you can follow along via the [RSS feed](/index.xml) — subscribe in your feed reader of choice to get notified when new posts go up.
 
-Thanks for checking out Julia For Data Science.
-
-## Sign up for more like this.
-
-Enter your email Subscribe
+You can also reach out on Twitter: [@JuliaForDataSci](https://twitter.com/JuliaForDataSci)

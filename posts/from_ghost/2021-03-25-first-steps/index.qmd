@@ -61,9 +61,9 @@ julia> Pkg.add("StatsBase")
 ```julia
 julia>
 
-(@v1.11) pkg> # type ']' to enter Pkg mode
+(@v1.12) pkg> # type ']' to enter Pkg mode
 
-(@v1.11) pkg> add StatsBase
+(@v1.12) pkg> add StatsBase
 
 julia>  # type backspace to go back to Julia mode
 ```
