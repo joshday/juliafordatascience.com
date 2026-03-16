@@ -34,6 +34,8 @@ quarto render
 
 Each post is a directory under `posts/` containing an `index.qmd` with YAML frontmatter. Posts with Julia code have their own `Project.toml` (and optionally `Manifest.toml`) for reproducibility. The CI pipeline automatically finds and instantiates all `Project.toml` files in the repo.
 
+`engines: ["julia"]` is set globally in `_quarto.yml`, so posts do not need `engine: julia` in their frontmatter.
+
 ## Freeze Behavior
 
 `posts/_metadata.yml` sets `freeze: auto` — Quarto only re-executes Julia code when source files change. Frozen outputs are stored in `_freeze/` and committed to git. To force re-execution of a specific post, delete its entry in `_freeze/`.

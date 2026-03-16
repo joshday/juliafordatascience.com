@@ -1,6 +1,8 @@
 project:
   type: website
 
+engines: ["julia"]
+
 website:
   title: "Julia for Data Science"
   site-url: https://juliafordatascience.com
