@@ -42,6 +42,9 @@ jobs:
       - name: Add R lib to LD_LIBRARY_PATH
         run: echo "LD_LIBRARY_PATH=$(R RHOME)/lib:$LD_LIBRARY_PATH" >> $GITHUB_ENV
 
+      - name: Install R packages
+        run: Rscript -e 'install.packages("ggplot2", repos="https://cran.r-project.org")'
+
       - name: Install Julia packages
         run: |
           find . -name "Project.toml" | while read f; do
