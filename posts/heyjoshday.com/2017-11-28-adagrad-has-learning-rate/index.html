@@ -70,8 +70,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -107,7 +121,7 @@ window.Quarto = {
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -121,10 +135,6 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
@@ -136,38 +146,7 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      
-                                <div class="quarto-categories">
-                <div class="quarto-category">heyjoshday.com</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Josh Day </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">November 28, 2017</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -183,30 +162,56 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Josh Day </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 28, 2017</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="adagrad-has-a-learning-rate" class="level1">
 <h1>AdaGrad has a Learning Rate</h1>
 <p><a href="http://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf">AdaGrad (PDF)</a> is an interesting algorithm for adaptive element-wise learning rates. First consider a stochastic gradient descent (SGD) update</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \theta^{(t)} = \theta^{(t-1)} + \gamma_t g_t,
-\]</span></p>
-<p>where <span class="math inline">\(\gamma_t\)</span> is a step size (learning rate) and <span class="math inline">\(g_t = \nabla f_t(\theta^{(t-1)})\)</span> is the gradient of a noisy objective function. The AdaGrad algorithm replaces the step sizes <span class="math inline">\(\gamma_t\)</span> with a matrix inverse that scales the elements of the gradient:</p>
-<p><span class="math display">\[
+</span></p>
+<p>where <span class="math inline">\gamma_t</span> is a step size (learning rate) and <span class="math inline">g_t = \nabla f_t(\theta^{(t-1)})</span> is the gradient of a noisy objective function. The AdaGrad algorithm replaces the step sizes <span class="math inline">\gamma_t</span> with a matrix inverse that scales the elements of the gradient:</p>
+<p><span class="math display">
 \theta^{(t)} = \theta^{(t-1)} + \text{diag}(G_t)^{-\frac{1}{2}}g_t,
-\]</span></p>
-<p>where <span class="math inline">\(G_t = \sum_{i=1}^t g_t g_t^T\)</span>. In this form, it is suggested that AdaGrad does not have a learning rate. However, with very basic algebra, the AdaGrad update is</p>
-<p><span class="math display">\[
+</span></p>
+<p>where <span class="math inline">G_t = \sum_{i=1}^t g_t g_t^T</span>. In this form, it is suggested that AdaGrad does not have a learning rate. However, with very basic algebra, the AdaGrad update is</p>
+<p><span class="math display">
 \theta^{(t)} = \theta^{(t-1)} + \frac{1}{\sqrt t}\text{diag}(G_t^*)^{-\frac{1}{2}}g_t,
-\]</span></p>
-<p>where <span class="math inline">\(G_t^* = t^{-1} G_t\)</span>. That is, if the matrix term producing the adaptive step sizes is considered as a <em>mean</em> instead of a <em>sum</em>, we see that <strong>AdaGrad has a learning rate</strong> <span class="math inline">\(\gamma_t = 1/\sqrt t\)</span>.</p>
+</span></p>
+<p>where <span class="math inline">G_t^* = t^{-1} G_t</span>. That is, if the matrix term producing the adaptive step sizes is considered as a <em>mean</em> instead of a <em>sum</em>, we see that <strong>AdaGrad has a learning rate</strong> <span class="math inline">\gamma_t = 1/\sqrt t</span>.</p>
 <section id="onlinestats" class="level2">
 <h2 class="anchored" data-anchor-id="onlinestats">OnlineStats</h2>
-<p>In <a href="http://joshday.github.io/OnlineStats.jl/latest/">OnlineStats.jl</a>, different weighting schemes can be plugged into any statistic or model (see <a href="http://joshday.github.io/OnlineStats.jl/latest/weights.html">docs on Weights</a>). OnlineStats implements AdaGrad in the <em>mean</em> form, which opens up a variety of learning rates to try rather than just the default <span class="math inline">\(\gamma_t = \frac{1}{\sqrt{t}}\)</span>. The plot below compares three different choices of learning rate. It’s interesting to note that the blue line, which uses the above default, is the slowest at finding the optimum loss value.</p>
+<p>In <a href="http://joshday.github.io/OnlineStats.jl/latest/">OnlineStats.jl</a>, different weighting schemes can be plugged into any statistic or model (see <a href="http://joshday.github.io/OnlineStats.jl/latest/weights.html">docs on Weights</a>). OnlineStats implements AdaGrad in the <em>mean</em> form, which opens up a variety of learning rates to try rather than just the default <span class="math inline">\gamma_t = \frac{1}{\sqrt{t}}</span>. The plot below compares three different choices of learning rate. It’s interesting to note that the blue line, which uses the above default, is the slowest at finding the optimum loss value.</p>
 <p><img src="https://user-images.githubusercontent.com/8075494/44235428-7f140a00-a177-11e8-8e05-1980a084240e.png" class="preview-image img-fluid"></p>
 <p>To try out <code>OnlineStats.ADAGRAD</code>, see <a href="https://joshday.github.io/OnlineStats.jl/latest/ml/"><code>StatLearn</code></a></p>
 

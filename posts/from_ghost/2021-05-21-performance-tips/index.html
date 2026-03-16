@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -127,10 +127,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
@@ -142,39 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      
-                                <div class="quarto-categories">
-                <div class="quarto-category">performance</div>
-                <div class="quarto-category">Julia</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Josh Day </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">May 21, 2021</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -209,10 +173,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Josh Day </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 21, 2021</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="performance-tips" class="level1">
@@ -322,7 +312,7 @@ Tip
 <span id="cb10-8"><a href="#cb10-8"></a>data <span class="op">=</span> <span class="fu">randn</span>(<span class="fl">10</span><span class="op">^</span><span class="fl">6</span>);</span>
 <span id="cb10-9"><a href="#cb10-9"></a><span class="pp">@time</span> <span class="fu">add100_slow!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.661692 seconds (239.40 k allocations: 774.789 MiB, 68.61% gc time, 11.30% compilation time)</code></pre>
+<pre><code>  0.438204 seconds (239.40 k allocations: 774.794 MiB, 54.09% gc time, 16.25% compilation time)</code></pre>
 </div>
 </div>
 <p><strong>Problems identified:</strong></p>
@@ -341,7 +331,7 @@ Tip
 <span id="cb12-4"><a href="#cb12-4"></a></span>
 <span id="cb12-5"><a href="#cb12-5"></a><span class="pp">@time</span> <span class="fu">add100_fast!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.023117 seconds (109.85 k allocations: 5.465 MiB, 98.39% compilation time)</code></pre>
+<pre><code>  0.021328 seconds (109.85 k allocations: 5.465 MiB, 98.59% compilation time)</code></pre>
 </div>
 </div>
 <hr>
@@ -359,26 +349,26 @@ Tip
 <span id="cb14-4"><a href="#cb14-4"></a>y <span class="op">=</span> <span class="fu">sin</span>.(<span class="fu">abs</span>.(x)) <span class="op">.+</span> <span class="fl">1</span> <span class="op">./</span> (<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100-element Vector{Float64}:
- 1.9762724508191676
- 1.4938939795284985
- 0.5878241000519993
- 0.8038892859781985
- 0.9294068636002342
- 0.7780105782351738
- 0.16980988965072202
- 1.1238656042945303
- 0.7626969740750795
- 0.5016832171300958
+ 1.742916547729429
+ 0.5506446718111421
+ 0.40132467853930376
+ 1.079165724312285
+ 0.33523654768430067
+ 1.1179247480785515
+ 0.17937803706853556
+ 1.0545729695519084
+ 0.7390095950583804
+ 1.0980454296287605
  ⋮
- 0.625767091807435
- 0.4763252739716715
- 0.38886078216671893
- 0.014447102588675076
- 0.37223668621069533
- 0.5550439149616992
- 1.008671034858241
- 0.641574139957034
- 0.9863179015603165</code></pre>
+ 0.5130034800362222
+ 1.0094342835748362
+ 0.43907251561264543
+ 0.7151554665485907
+ 0.3835913088427513
+ 1.006793416312773
+ 0.3482197344388648
+ 0.8513946343981126
+ 1.002832693351697</code></pre>
 </div>
 </div>
 </section>
@@ -418,9 +408,9 @@ Tip
 <span id="cb20-5"><a href="#cb20-5"></a><span class="fu">view</span>(x, <span class="op">:</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>)    <span class="co"># View — no copy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3×2 view(::Matrix{Float64}, :, 1:2) with eltype Float64:
-  0.191303  0.148907
-  1.18414   0.236462
- -0.385237  0.61397</code></pre>
+ 0.805485    2.6765
+ 0.0573592   0.186415
+ 0.360635   -0.175021</code></pre>
 </div>
 </div>
 <p><strong>Access Elements Sequentially:</strong></p>

@@ -20,7 +20,6 @@
 
 
 
-
 <section id="new-website" class="level1">
 <h1>New Website!</h1>
 <p><a href="https://juliafordatascience.com">juliafordatascience.com</a> has changed its tech stack. While a very cool platform, we decided to move off the <a href="https://ghost.org">Ghost.org</a> platform and rely solely on open source tools. We’re going all in on <a href="https://quarto.org">Quarto</a>. Why?</p>
@@ -35,7 +34,6 @@
 </section>
 
  ]]></description>
-  <category>announcement</category>
   <guid>http://juliafordatascience.com/posts/2025/2025-03-26-new-site/</guid>
   <pubDate>Wed, 26 Mar 2025 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1620924049153-4d32fcbe88fe?q=80&amp;w=2942&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" medium="image"/>
@@ -45,7 +43,6 @@
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2022-06-24-artifacts/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -317,9 +314,6 @@ font-style: inherit;">Hello</span></span>
 </section>
 
  ]]></description>
-  <category>artifacts</category>
-  <category>packages</category>
-  <category>Pkg</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2022-06-24-artifacts/</guid>
   <pubDate>Fri, 24 Jun 2022 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8" medium="image"/>
@@ -329,7 +323,6 @@ font-style: inherit;">Hello</span></span>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-11-09-cheatsheets/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -364,8 +357,6 @@ font-style: inherit;">Hello</span></span>
 </section>
 
  ]]></description>
-  <category>cheatsheet</category>
-  <category>resources</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-11-09-cheatsheets/</guid>
   <pubDate>Tue, 09 Nov 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1456324504439-367cee3b3c32" medium="image"/>
@@ -375,7 +366,6 @@ font-style: inherit;">Hello</span></span>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-11-04-json-web-apis/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -687,10 +677,6 @@ font-style: inherit;">552</span>)</span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>JSON</category>
-  <category>web</category>
-  <category>HTTP</category>
-  <category>beginner</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-11-04-json-web-apis/</guid>
   <pubDate>Thu, 04 Nov 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1558494949-ef010cbdcc31" medium="image"/>
@@ -700,7 +686,6 @@ font-style: inherit;">552</span>)</span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-08-17-juliacon-2021-data-science-talks/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -779,9 +764,6 @@ font-style: inherit;">552</span>)</span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>JuliaCon</category>
-  <category>talks</category>
-  <category>data science</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-08-17-juliacon-2021-data-science-talks/</guid>
   <pubDate>Tue, 17 Aug 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1540575467063-178a50c2df87" medium="image"/>
@@ -791,7 +773,6 @@ font-style: inherit;">552</span>)</span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-06-10-calling-r-from-julia/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -1020,9 +1001,6 @@ font-style: inherit;">5.0</span></span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>R</category>
-  <category>RCall.jl</category>
-  <category>interop</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-06-10-calling-r-from-julia/</guid>
   <pubDate>Thu, 10 Jun 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" medium="image"/>
@@ -1032,7 +1010,6 @@ font-style: inherit;">5.0</span></span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-06-03-big-csvs/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -1107,10 +1084,10 @@ font-style: inherit;">"Date"</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
-   2008.3 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerTablesExt<span class="ansi-bright-black-fg"> (serial)</span>
+   1833.5 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerTablesExt<span class="ansi-bright-black-fg"> (serial)</span>
   1 dependency successfully precompiled in 2 seconds
 <span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
-    997.1 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerLaTeXStringsExt<span class="ansi-bright-black-fg"> (serial)</span>
+    884.1 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerLaTeXStringsExt<span class="ansi-bright-black-fg"> (serial)</span>
   1 dependency successfully precompiled in 1 seconds
 </pre>
 </div>
@@ -1242,10 +1219,6 @@ font-style: inherit;">4</span>]</span>
 </section>
 
  ]]></description>
-  <category>CSV</category>
-  <category>data</category>
-  <category>big data</category>
-  <category>OnlineStats.jl</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-06-03-big-csvs/</guid>
   <pubDate>Thu, 03 Jun 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3" medium="image"/>
@@ -1255,7 +1228,6 @@ font-style: inherit;">4</span>]</span>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-05-21-performance-tips/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -1530,7 +1502,7 @@ font-style: inherit;">@time</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">add100_slow!</span>(data);</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.661692 seconds (239.40 k allocations: 774.789 MiB, 68.61% gc time, 11.30% compilation time)</code></pre>
+<pre><code>  0.438204 seconds (239.40 k allocations: 774.794 MiB, 54.09% gc time, 16.25% compilation time)</code></pre>
 </div>
 </div>
 <p><strong>Problems identified:</strong></p>
@@ -1565,7 +1537,7 @@ font-style: inherit;">@time</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">add100_fast!</span>(data);</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.023117 seconds (109.85 k allocations: 5.465 MiB, 98.39% compilation time)</code></pre>
+<pre><code>  0.021328 seconds (109.85 k allocations: 5.465 MiB, 98.59% compilation time)</code></pre>
 </div>
 </div>
 <hr>
@@ -1609,26 +1581,26 @@ background-color: null;
 font-style: inherit;">100</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100-element Vector{Float64}:
- 1.9762724508191676
- 1.4938939795284985
- 0.5878241000519993
- 0.8038892859781985
- 0.9294068636002342
- 0.7780105782351738
- 0.16980988965072202
- 1.1238656042945303
- 0.7626969740750795
- 0.5016832171300958
+ 1.742916547729429
+ 0.5506446718111421
+ 0.40132467853930376
+ 1.079165724312285
+ 0.33523654768430067
+ 1.1179247480785515
+ 0.17937803706853556
+ 1.0545729695519084
+ 0.7390095950583804
+ 1.0980454296287605
  ⋮
- 0.625767091807435
- 0.4763252739716715
- 0.38886078216671893
- 0.014447102588675076
- 0.37223668621069533
- 0.5550439149616992
- 1.008671034858241
- 0.641574139957034
- 0.9863179015603165</code></pre>
+ 0.5130034800362222
+ 1.0094342835748362
+ 0.43907251561264543
+ 0.7151554665485907
+ 0.3835913088427513
+ 1.006793416312773
+ 0.3482197344388648
+ 0.8513946343981126
+ 1.002832693351697</code></pre>
 </div>
 </div>
 </section>
@@ -1722,9 +1694,9 @@ background-color: null;
 font-style: inherit;"># View — no copy</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3×2 view(::Matrix{Float64}, :, 1:2) with eltype Float64:
-  0.191303  0.148907
-  1.18414   0.236462
- -0.385237  0.61397</code></pre>
+ 0.805485    2.6765
+ 0.0573592   0.186415
+ 0.360635   -0.175021</code></pre>
 </div>
 </div>
 <p><strong>Access Elements Sequentially:</strong></p>
@@ -1801,8 +1773,6 @@ font-style: inherit;">end</span></span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>performance</category>
-  <category>Julia</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-05-21-performance-tips/</guid>
   <pubDate>Fri, 21 May 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4" medium="image"/>
@@ -1812,7 +1782,6 @@ font-style: inherit;">end</span></span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-05-07-animations-with-plots-jl/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -1881,7 +1850,7 @@ font-weight: bold;
 font-style: inherit;">end</span></span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_Iven41oHcR.gif
+<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_s7kJW7iRY9.gif
 </pre>
 </div>
 </div>
@@ -1929,7 +1898,7 @@ background-color: null;
 font-style: inherit;">30</span></span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_EHURgTUPMb.gif
+<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_AHgXqbeN0b.gif
 </pre>
 </div>
 </div>
@@ -2017,7 +1986,7 @@ background-color: null;
 font-style: inherit;">50</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_YR4XabeJed.gif
+<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_mxqNoZmTAZ.gif
 </pre>
 </div>
 </div>
@@ -2086,7 +2055,7 @@ background-color: null;
 font-style: inherit;">gif</span>(a)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_6l4pGn0t0F.gif
+<pre><span class="ansi-cyan-fg ansi-bold">[ </span><span class="ansi-cyan-fg ansi-bold">Info: </span>Saved animation to /tmp/jl_MdcT2XU3ax.gif
 </pre>
 </div>
 </div>
@@ -2108,9 +2077,6 @@ font-style: inherit;">gif</span>(a)</span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>Plots.jl</category>
-  <category>visualization</category>
-  <category>animations</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-05-07-animations-with-plots-jl/</guid>
   <pubDate>Fri, 07 May 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1551288049-bebda4e38f71" medium="image"/>
@@ -2120,7 +2086,6 @@ font-style: inherit;">gif</span>(a)</span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-04-13-quickstart/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -2266,26 +2231,26 @@ background-color: null;
 font-style: inherit;">3</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100×3 Matrix{Float64}:
-  0.749151   -0.980386  -0.697104
-  0.675733    0.154454   1.24114
- -1.21571     2.05963    0.58118
- -0.939658   -0.435228   1.07384
- -0.224161    0.582669  -0.506212
- -0.463163    0.453924   0.295405
-  2.05096    -0.412788  -0.316454
- -0.589701    0.303048   1.16787
-  0.604191    0.56933   -0.989729
- -1.18052    -0.249779   0.185681
-  ⋮                     
-  1.42523    -0.508179  -0.808064
-  1.52745     0.576599  -1.14602
-  0.0496017   0.397198   0.105055
- -0.70113    -1.67817    1.50032
-  0.413941    0.287184  -0.82135
- -0.127686    1.5578     0.971867
-  2.12749     1.12736    0.734672
- -0.405336   -0.313219  -0.861656
- -0.297403    0.482581   0.562449</code></pre>
+  0.506305  -0.439702   0.0504055
+ -1.36915   -1.23758   -0.102492
+  0.105814   0.20513    0.784627
+  0.442405  -0.850079   0.975088
+  0.998306   0.408603   0.8236
+  0.93423    0.257582   0.133654
+ -0.417176   0.805885   0.635505
+  0.538064   1.22761    0.65327
+  0.733575  -0.934506  -0.211096
+ -0.297248   2.38678   -0.17072
+  ⋮                    
+ -0.307983  -0.390136   0.436439
+  0.337175  -0.960675   0.942799
+ -0.511793  -0.338335   0.584894
+  0.191853  -1.30162   -0.525751
+  0.241594  -2.1866     1.263
+ -0.647392   1.60495   -0.476879
+ -1.66044    0.175448  -1.03748
+  1.9261    -1.16105    0.788614
+ -0.469598  -0.398342   0.588746</code></pre>
 </div>
 </div>
 </section>
@@ -2311,7 +2276,7 @@ font-style: inherit;">2</span>]  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># retrieve 3rd row of column 2</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>0.6020763140447783</code></pre>
+<pre><code>0.5869235128268735</code></pre>
 </div>
 </div>
 </section>
@@ -2666,7 +2631,7 @@ Closest candidates are:
 
 Stacktrace:
  [1] top-level scope
-<span class="ansi-bright-black-fg">   @</span> <span class="ansi-bright-black-fg">~/work/juliafordatascience.com/juliafordatascience.com/posts/from_ghost/2021-04-13-quickstart/</span><span style="text-decoration:underline" class="ansi-bright-black-fg">index.qmd:219</span></pre>
+<span class="ansi-bright-black-fg">   @</span> <span class="ansi-bright-black-fg">~/work/juliafordatascience.com/juliafordatascience.com/posts/from_ghost/2021-04-13-quickstart/</span><span style="text-decoration:underline" class="ansi-bright-black-fg">index.qmd:218</span></pre>
 </div>
 </div>
 </div>
@@ -2772,7 +2737,7 @@ background-color: null;
 font-weight: bold;
 font-style: inherit;">end</span></span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  3.005286 seconds (9 allocations: 336 bytes)</code></pre>
+<pre><code>  3.004470 seconds (9 allocations: 336 bytes)</code></pre>
 </div>
 </div>
 <hr>
@@ -2790,9 +2755,6 @@ font-style: inherit;">end</span></span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>quickstart</category>
-  <category>primer</category>
-  <category>Julia</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-04-13-quickstart/</guid>
   <pubDate>Tue, 13 Apr 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1516116216624-53e697fedbea" medium="image"/>
@@ -2802,7 +2764,6 @@ font-style: inherit;">end</span></span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-03-25-first-steps/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -2934,9 +2895,6 @@ font-style: inherit;"># type backspace to go back to Julia mode</span></span></c
 </section>
 
  ]]></description>
-  <category>first steps</category>
-  <category>quickstart</category>
-  <category>primer</category>
   <guid>http://juliafordatascience.com/posts/from_ghost/2021-03-25-first-steps/</guid>
   <pubDate>Thu, 25 Mar 2021 00:00:00 GMT</pubDate>
   <media:content url="https://images.unsplash.com/photo-1558395556-da76deb52b24" medium="image"/>
@@ -2946,7 +2904,6 @@ font-style: inherit;"># type backspace to go back to Julia mode</span></span></c
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/from_ghost/2021-03-18-welcome/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -2993,7 +2950,6 @@ font-style: inherit;"># type backspace to go back to Julia mode</span></span></c
 
 
 
-
 <section id="one-click-tuner" class="level1">
 <h1>One Click Tuner</h1>
 <p>This is a bit off topic for me, but I recently created an iOS Tuner app (<a href="https://apps.apple.com/us/app/one-click-tuner/id1448329781">App Store Link</a>) after not being satisfied with the other tuner apps out there (I play guitar). It was an excuse to learn some swift/signal processing as well as design a new kind of tuner display that I think is a bit more insightful than the norm:</p>
@@ -3019,7 +2975,6 @@ Note
 </section>
 
  ]]></description>
-  <category>heyjoshday.com</category>
   <guid>http://juliafordatascience.com/posts/heyjoshday.com/2019-01-22-one-click-tuner/</guid>
   <pubDate>Tue, 22 Jan 2019 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/user-attachments/assets/64afef93-1ed3-4c83-bf48-fa7390d11515" medium="image"/>
@@ -3029,7 +2984,6 @@ Note
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/heyjoshday.com/2018-10-16-learning-rates/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -3079,7 +3033,6 @@ Note
 </section>
 
  ]]></description>
-  <category>heyjoshday.com</category>
   <guid>http://juliafordatascience.com/posts/heyjoshday.com/2018-10-16-learning-rates/</guid>
   <pubDate>Tue, 16 Oct 2018 00:00:00 GMT</pubDate>
 </item>
@@ -3088,7 +3041,6 @@ Note
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/heyjoshday.com/2018-08-17-why-i-use-julia/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -3337,7 +3289,6 @@ font-style: inherit;">.1</span>)</span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>heyjoshday.com</category>
   <guid>http://juliafordatascience.com/posts/heyjoshday.com/2018-08-17-why-i-use-julia/</guid>
   <pubDate>Fri, 17 Aug 2018 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/JuliaLang/julia-logo-graphics/raw/master/images/julia-language-logo-white-border.svg" medium="image" type="image/svg+xml"/>
@@ -3347,7 +3298,6 @@ font-style: inherit;">.1</span>)</span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/heyjoshday.com/2017-11-28-adagrad-has-learning-rate/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -3372,7 +3322,6 @@ font-style: inherit;">.1</span>)</span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>heyjoshday.com</category>
   <guid>http://juliafordatascience.com/posts/heyjoshday.com/2017-11-28-adagrad-has-learning-rate/</guid>
   <pubDate>Tue, 28 Nov 2017 00:00:00 GMT</pubDate>
 </item>
@@ -3381,7 +3330,6 @@ font-style: inherit;">.1</span>)</span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/heyjoshday.com/2016-12-24-mm_algorithms/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -3446,9 +3394,6 @@ font-style: inherit;">.1</span>)</span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>MM algorithms</category>
-  <category>logistic regression</category>
-  <category>heyjoshday.com</category>
   <guid>http://juliafordatascience.com/posts/heyjoshday.com/2016-12-24-mm_algorithms/</guid>
   <pubDate>Sat, 24 Dec 2016 00:00:00 GMT</pubDate>
 </item>
@@ -3457,7 +3402,6 @@ font-style: inherit;">.1</span>)</span></code></pre></div></div>
   <dc:creator>Josh Day</dc:creator>
   <link>http://juliafordatascience.com/posts/heyjoshday.com/2015-10-02-glmnet-tutorial/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -3488,8 +3432,6 @@ Note
 </section>
 
  ]]></description>
-  <category>R</category>
-  <category>heyjoshday.com</category>
   <guid>http://juliafordatascience.com/posts/heyjoshday.com/2015-10-02-glmnet-tutorial/</guid>
   <pubDate>Fri, 02 Oct 2015 00:00:00 GMT</pubDate>
   <media:content url="https://towardsdatascience.com/wp-content/uploads/2020/11/1nrWncnoJ4V_BkzEf1pd4MA.png" medium="image" type="image/png"/>

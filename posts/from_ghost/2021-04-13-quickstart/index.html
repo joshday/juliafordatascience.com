@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -130,10 +130,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
@@ -145,40 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      
-                                <div class="quarto-categories">
-                <div class="quarto-category">quickstart</div>
-                <div class="quarto-category">primer</div>
-                <div class="quarto-category">Julia</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Josh Day </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">April 13, 2021</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -220,10 +183,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Josh Day </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 13, 2021</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="julia-quickstart" class="level1">
@@ -299,26 +288,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-2"><a href="#cb9-2"></a><span class="fu">randn</span>(<span class="fl">100</span>, <span class="fl">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100×3 Matrix{Float64}:
-  0.749151   -0.980386  -0.697104
-  0.675733    0.154454   1.24114
- -1.21571     2.05963    0.58118
- -0.939658   -0.435228   1.07384
- -0.224161    0.582669  -0.506212
- -0.463163    0.453924   0.295405
-  2.05096    -0.412788  -0.316454
- -0.589701    0.303048   1.16787
-  0.604191    0.56933   -0.989729
- -1.18052    -0.249779   0.185681
-  ⋮                     
-  1.42523    -0.508179  -0.808064
-  1.52745     0.576599  -1.14602
-  0.0496017   0.397198   0.105055
- -0.70113    -1.67817    1.50032
-  0.413941    0.287184  -0.82135
- -0.127686    1.5578     0.971867
-  2.12749     1.12736    0.734672
- -0.405336   -0.313219  -0.861656
- -0.297403    0.482581   0.562449</code></pre>
+  0.506305  -0.439702   0.0504055
+ -1.36915   -1.23758   -0.102492
+  0.105814   0.20513    0.784627
+  0.442405  -0.850079   0.975088
+  0.998306   0.408603   0.8236
+  0.93423    0.257582   0.133654
+ -0.417176   0.805885   0.635505
+  0.538064   1.22761    0.65327
+  0.733575  -0.934506  -0.211096
+ -0.297248   2.38678   -0.17072
+  ⋮                    
+ -0.307983  -0.390136   0.436439
+  0.337175  -0.960675   0.942799
+ -0.511793  -0.338335   0.584894
+  0.191853  -1.30162   -0.525751
+  0.241594  -2.1866     1.263
+ -0.647392   1.60495   -0.476879
+ -1.66044    0.175448  -1.03748
+  1.9261    -1.16105    0.788614
+ -0.469598  -0.398342   0.588746</code></pre>
 </div>
 </div>
 </section>
@@ -330,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-2"><a href="#cb11-2"></a></span>
 <span id="cb11-3"><a href="#cb11-3"></a>x[<span class="fl">3</span>, <span class="fl">2</span>]  <span class="co"># retrieve 3rd row of column 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>0.6020763140447783</code></pre>
+<pre><code>0.5869235128268735</code></pre>
 </div>
 </div>
 </section>
@@ -504,7 +493,7 @@ Closest candidates are:
 
 Stacktrace:
  [1] top-level scope
-<span class="ansi-bright-black-fg">   @</span> <span class="ansi-bright-black-fg">~/work/juliafordatascience.com/juliafordatascience.com/posts/from_ghost/2021-04-13-quickstart/</span><span style="text-decoration:underline" class="ansi-bright-black-fg">index.qmd:219</span></pre>
+<span class="ansi-bright-black-fg">   @</span> <span class="ansi-bright-black-fg">~/work/juliafordatascience.com/juliafordatascience.com/posts/from_ghost/2021-04-13-quickstart/</span><span style="text-decoration:underline" class="ansi-bright-black-fg">index.qmd:218</span></pre>
 </div>
 </div>
 </div>
@@ -556,7 +545,7 @@ Stacktrace:
 <span id="cb38-3"><a href="#cb38-3"></a>    <span class="fu">sleep</span>(<span class="fl">2</span>)</span>
 <span id="cb38-4"><a href="#cb38-4"></a><span class="cf">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  3.005286 seconds (9 allocations: 336 bytes)</code></pre>
+<pre><code>  3.004470 seconds (9 allocations: 336 bytes)</code></pre>
 </div>
 </div>
 <hr>
