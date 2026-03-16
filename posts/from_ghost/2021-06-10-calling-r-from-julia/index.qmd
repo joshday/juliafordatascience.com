@@ -1,6 +1,7 @@
 ---
 date: 2021-06-10
 image: https://images.unsplash.com/photo-1515879218367-8466d910aaa4
+freeze: false
 ---
 
 # Calling R From Julia
@@ -20,11 +21,9 @@ Julia's younger ecosystem sometimes lacks packages for specialized tasks. The so
 After importing RCall, access the R REPL by typing `$`. The prompt switches from `julia>` to `R>`, allowing native R commands:
 
 ```julia
-julia> using RCall
+using RCall
 
 # type `$` to enter R mode
-
-R> install.packages("ggplot2")
 
 R> library(ggplot2)
 
@@ -37,66 +36,58 @@ R> ggplot(diamonds, aes(x=carat, y=price)) + geom_point()
 
 The `@R_str` macro executes R code programmatically:
 
-```julia
-julia> R"y = 2"
-RObject{RealSxp}
-[1] 2
+```{julia}
+using RCall
+
+R"y = 2"
 ```
 
 ## Sending Julia Variables to R
 
 ### Using `@rput`
 
-```julia
-julia> x = 1
-1
+```{julia}
+x = 1
 
-julia> @rput x
-1
+@rput x
 
-R> x
-[1] 1
+R"x"
 ```
 
 ### String Interpolation
 
-```julia
-julia> x = 1
-1
+```{julia}
+R"y = $x"
 
-julia> R"y = $x"
-RObject{IntSxp}
-[1] 1
-
-R> 1 + $x
-[1] 2
+R"1 + $x"
 ```
 
 ## Retrieving R Variables in Julia
 
 ### Using `@rget`
 
-```julia
-julia> R"z = 5"
-RObject{RealSxp}
-[1] 5
+```{julia}
+R"z = 5"
 
-julia> @rget z
-5.0
+@rget z
 
-julia> z
-5.0
+z
 ```
 
 ### Using `rcopy()`
 
-```julia
-julia> robj = R"z"
-RObject{RealSxp}
-[1] 5
+```{julia}
+robj = R"z"
 
-julia> rcopy(robj)
-5.0
+rcopy(robj)
+```
+
+## Plotting with ggplot2
+
+```{julia}
+R"library(ggplot2)"
+R"data(diamonds)"
+R"ggplot(diamonds, aes(x=carat, y=price)) + geom_point()"
 ```
 
 ## Resources
