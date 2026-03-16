@@ -39,6 +39,8 @@ The `@R_str` macro executes R code programmatically:
 ```{julia}
 using RCall
 
+R"install.packages('ggplot2', repos='https://cran.r-project.org', quiet=TRUE)"
+
 R"y = 2"
 ```
 
@@ -85,10 +87,16 @@ rcopy(robj)
 ## Plotting with ggplot2
 
 ```{julia}
-R"library(ggplot2)"
-R"data(diamonds)"
-R"ggplot(diamonds, aes(x=carat, y=price)) + geom_point()"
+#| output: false
+R"""
+library(ggplot2)
+data(diamonds)
+p <- ggplot(diamonds, aes(x=carat, y=price)) + geom_point()
+ggsave('diamonds_plot.png', p, width=6, height=4, dpi=150)
+"""
 ```
+
+![](diamonds_plot.png)
 
 ## Resources
 
