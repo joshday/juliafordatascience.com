@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-53ea66801c803034fdd837dd2704c587.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c92ac22e1a148eaba85a4414650ba1de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -312,7 +312,7 @@ Tip
 <span id="cb10-8"><a href="#cb10-8"></a>data <span class="op">=</span> <span class="fu">randn</span>(<span class="fl">10</span><span class="op">^</span><span class="fl">6</span>);</span>
 <span id="cb10-9"><a href="#cb10-9"></a><span class="pp">@time</span> <span class="fu">add100_slow!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.479075 seconds (239.40 k allocations: 774.792 MiB, 55.11% gc time, 16.29% compilation time)</code></pre>
+<pre><code>  0.654274 seconds (239.40 k allocations: 774.791 MiB, 68.93% gc time, 11.43% compilation time)</code></pre>
 </div>
 </div>
 <p><strong>Problems identified:</strong></p>
@@ -331,7 +331,7 @@ Tip
 <span id="cb12-4"><a href="#cb12-4"></a></span>
 <span id="cb12-5"><a href="#cb12-5"></a><span class="pp">@time</span> <span class="fu">add100_fast!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.024007 seconds (109.85 k allocations: 5.465 MiB, 98.40% compilation time)</code></pre>
+<pre><code>  0.023019 seconds (109.85 k allocations: 5.465 MiB, 98.53% compilation time)</code></pre>
 </div>
 </div>
 <hr>
@@ -349,26 +349,26 @@ Tip
 <span id="cb14-4"><a href="#cb14-4"></a>y <span class="op">=</span> <span class="fu">sin</span>.(<span class="fu">abs</span>.(x)) <span class="op">.+</span> <span class="fl">1</span> <span class="op">./</span> (<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100-element Vector{Float64}:
- 1.303476611193288
- 0.7963688484080182
- 0.5112488783413149
- 0.5290879378670907
- 1.1298196539820704
- 0.6954788429401516
- 0.70152868894922
- 0.3369998597136691
- 0.26865913471787667
- 0.5729132772921184
+ 1.0436711396434621
+ 1.488860696088759
+ 1.1588279842851374
+ 0.3875656829581255
+ 1.1200733800462561
+ 0.6642365649674812
+ 0.9406042888385351
+ 0.1271254894680726
+ 0.7682280508499082
+ 0.6340598983852705
  ⋮
- 0.20003648005155505
- 0.6275203988389805
- 0.9185287859703333
- 0.6616779828339175
- 0.1721962332372779
- 0.6860236072377289
- 0.6707094018588156
- 0.5554438643760824
- 0.6231473858903998</code></pre>
+ 0.4065065225512069
+ 0.11267645134518546
+ 0.2642917691404014
+ 0.6361712152732573
+ 0.03908343583974342
+ 0.08888201524535419
+ 0.355530049583456
+ 0.44170429962147967
+ 0.9450970769817278</code></pre>
 </div>
 </div>
 </section>
@@ -408,9 +408,9 @@ Tip
 <span id="cb20-5"><a href="#cb20-5"></a><span class="fu">view</span>(x, <span class="op">:</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>)    <span class="co"># View — no copy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3×2 view(::Matrix{Float64}, :, 1:2) with eltype Float64:
- -1.89101     1.0275
- -0.761688   -2.37632
-  0.0164339  -0.674279</code></pre>
+  0.390288  -0.255508
+ -0.331239  -1.73403
+  1.71882   -2.07083</code></pre>
 </div>
 </div>
 <p><strong>Access Elements Sequentially:</strong></p>
