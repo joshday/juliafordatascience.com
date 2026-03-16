@@ -39,7 +39,7 @@ The `@R_str` macro executes R code programmatically:
 ```{julia}
 using RCall
 
-R"install.packages('ggplot2', repos='https://cran.r-project.org', quiet=TRUE)"
+R"utils::install.packages('ggplot2', repos='https://cran.r-project.org', quiet=TRUE)"
 
 R"y = 2"
 ```
@@ -59,6 +59,7 @@ R"x"
 ### String Interpolation
 
 ```{julia}
+#| eval: false
 R"y = $x"
 
 R"1 + $x"
