@@ -198,6 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="post-structure" class="level2">
 <h2 class="anchored" data-anchor-id="post-structure">Post Structure</h2>
 <p>Each post is a directory under <code>posts/</code> containing an <code>index.qmd</code> with YAML frontmatter. Posts with Julia code have their own <code>Project.toml</code> (and optionally <code>Manifest.toml</code>) for reproducibility. The CI pipeline automatically finds and instantiates all <code>Project.toml</code> files in the repo.</p>
+<p><code>engines: ["julia"]</code> is set globally in <code>_quarto.yml</code>, so posts do not need <code>engine: julia</code> in their frontmatter.</p>
 </section>
 <section id="freeze-behavior" class="level2">
 <h2 class="anchored" data-anchor-id="freeze-behavior">Freeze Behavior</h2>
@@ -212,6 +213,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 
 </main> <!-- /main -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const meta = document.querySelector('.quarto-title-meta');
+    const main = document.querySelector('main.content');
+    if (meta && main) main.appendChild(meta);
+  });
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

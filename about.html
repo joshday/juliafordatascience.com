@@ -134,6 +134,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const meta = document.querySelector('.quarto-title-meta');
+    const main = document.querySelector('main.content');
+    if (meta && main) main.appendChild(meta);
+  });
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

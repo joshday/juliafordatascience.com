@@ -111,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#new-website" id="toc-new-website" class="nav-link active" data-scroll-target="#new-website">New Website!</a></li>
+  <li><a href="#new-website" id="toc-new-website" class="nav-link active" data-scroll-target="#new-website">New Website</a></li>
   </ul>
 </nav>
     </div>
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="new-website" class="level1">
-<h1>New Website!</h1>
+<h1>New Website</h1>
 <p><a href="https://juliafordatascience.com">juliafordatascience.com</a> has changed its tech stack. While a very cool platform, we decided to move off the <a href="https://ghost.org">Ghost.org</a> platform and rely solely on open source tools. We’re going all in on <a href="https://quarto.org">Quarto</a>. Why?</p>
 <ol type="1">
 <li><strong>No Vendor Lock-In:</strong> We don’t want to be locked into a proprietary platfrom.</li>
@@ -162,6 +162,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const meta = document.querySelector('.quarto-title-meta');
+    const main = document.querySelector('main.content');
+    if (meta && main) main.appendChild(meta);
+  });
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

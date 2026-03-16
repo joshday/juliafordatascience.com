@@ -164,6 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#using-rget" id="toc-using-rget" class="nav-link" data-scroll-target="#using-rget">Using <code>@rget</code></a></li>
   <li><a href="#using-rcopy" id="toc-using-rcopy" class="nav-link" data-scroll-target="#using-rcopy">Using <code>rcopy()</code></a></li>
   </ul></li>
+  <li><a href="#plotting-with-ggplot2" id="toc-plotting-with-ggplot2" class="nav-link" data-scroll-target="#plotting-with-ggplot2">Plotting with ggplot2</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul></li>
   </ul>
@@ -214,75 +215,107 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="interactive-mode-repl" class="level3">
 <h3 class="anchored" data-anchor-id="interactive-mode-repl">Interactive Mode (REPL)</h3>
 <p>After importing RCall, access the R REPL by typing <code>$</code>. The prompt switches from <code>julia&gt;</code> to <code>R&gt;</code>, allowing native R commands:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1"></a>julia<span class="op">&gt;</span> <span class="im">using</span> <span class="bu">RCall</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">using</span> <span class="bu">RCall</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="co"># type `$` to enter R mode</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a>R<span class="op">&gt;</span> install.<span class="fu">packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>R<span class="op">&gt;</span> <span class="fu">library</span>(ggplot2)</span>
 <span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>R<span class="op">&gt;</span> <span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-7"><a href="#cb2-7"></a>R<span class="op">&gt;</span> <span class="fu">data</span>(diamonds)</span>
 <span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a>R<span class="op">&gt;</span> <span class="fu">data</span>(diamonds)</span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a>R<span class="op">&gt;</span> <span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(x<span class="op">=</span>carat, y<span class="op">=</span>price)) <span class="op">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-9"><a href="#cb2-9"></a>R<span class="op">&gt;</span> <span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(x<span class="op">=</span>carat, y<span class="op">=</span>price)) <span class="op">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="non-interactive-mode" class="level3">
 <h3 class="anchored" data-anchor-id="non-interactive-mode">Non-Interactive Mode</h3>
 <p>The <code>@R_str</code> macro executes R code programmatically:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1"></a>julia<span class="op">&gt;</span> R<span class="st">"y = 2"</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>RObject{RealSxp}</span>
-<span id="cb3-3"><a href="#cb3-3"></a>[<span class="fl">1</span>] <span class="fl">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">using</span> <span class="bu">RCall</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>R<span class="st">"y = 2"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
+    979.1 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerTablesExt<span class="ansi-bright-black-fg"> (serial)</span>
+  1 dependency successfully precompiled in 1 seconds
+<span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
+    982.1 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerLaTeXStringsExt<span class="ansi-bright-black-fg"> (serial)</span>
+  1 dependency successfully precompiled in 1 seconds
+<span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
+   3774.4 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerRCallExt<span class="ansi-bright-black-fg"> (serial)</span>
+  1 dependency successfully precompiled in 4 seconds
+</pre>
+</div>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>RObject{RealSxp}
+[1] 2</code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="sending-julia-variables-to-r" class="level2">
 <h2 class="anchored" data-anchor-id="sending-julia-variables-to-r">Sending Julia Variables to R</h2>
 <section id="using-rput" class="level3">
 <h3 class="anchored" data-anchor-id="using-rput">Using <code>@rput</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1"></a>julia<span class="op">&gt;</span> x <span class="op">=</span> <span class="fl">1</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fl">1</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a>julia<span class="op">&gt;</span> <span class="pp">@rput</span> x</span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="fl">1</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7"></a>R<span class="op">&gt;</span> x</span>
-<span id="cb4-8"><a href="#cb4-8"></a>[<span class="fl">1</span>] <span class="fl">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="pp">@rput</span> x</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>R<span class="st">"x"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>RObject{IntSxp}
+[1] 1</code></pre>
+</div>
+</div>
 </section>
 <section id="string-interpolation" class="level3">
 <h3 class="anchored" data-anchor-id="string-interpolation">String Interpolation</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1"></a>julia<span class="op">&gt;</span> x <span class="op">=</span> <span class="fl">1</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fl">1</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a>julia<span class="op">&gt;</span> R<span class="st">"y = </span><span class="sc">$</span>x<span class="st">"</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>RObject{IntSxp}</span>
-<span id="cb5-6"><a href="#cb5-6"></a>[<span class="fl">1</span>] <span class="fl">1</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8"></a>R<span class="op">&gt;</span> <span class="fl">1</span> <span class="op">+</span> <span class="op">$</span>x</span>
-<span id="cb5-9"><a href="#cb5-9"></a>[<span class="fl">1</span>] <span class="fl">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6" class="cell" data-execution_count="0">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1"></a>R<span class="st">"y = </span><span class="sc">$</span>x<span class="st">"</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>R<span class="st">"1 + </span><span class="sc">$</span>x<span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 </section>
 <section id="retrieving-r-variables-in-julia" class="level2">
 <h2 class="anchored" data-anchor-id="retrieving-r-variables-in-julia">Retrieving R Variables in Julia</h2>
 <section id="using-rget" class="level3">
 <h3 class="anchored" data-anchor-id="using-rget">Using <code>@rget</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1"></a>julia<span class="op">&gt;</span> R<span class="st">"z = 5"</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>RObject{RealSxp}</span>
-<span id="cb6-3"><a href="#cb6-3"></a>[<span class="fl">1</span>] <span class="fl">5</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a>julia<span class="op">&gt;</span> <span class="pp">@rget</span> z</span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="fl">5.0</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a></span>
-<span id="cb6-8"><a href="#cb6-8"></a>julia<span class="op">&gt;</span> z</span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="fl">5.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="8" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1"></a>R<span class="st">"z = 5"</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="pp">@rget</span> z</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a>z</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>5.0</code></pre>
+</div>
+</div>
 </section>
 <section id="using-rcopy" class="level3">
 <h3 class="anchored" data-anchor-id="using-rcopy">Using <code>rcopy()</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1"></a>julia<span class="op">&gt;</span> robj <span class="op">=</span> R<span class="st">"z"</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>RObject{RealSxp}</span>
-<span id="cb7-3"><a href="#cb7-3"></a>[<span class="fl">1</span>] <span class="fl">5</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a></span>
-<span id="cb7-5"><a href="#cb7-5"></a>julia<span class="op">&gt;</span> <span class="fu">rcopy</span>(robj)</span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="fl">5.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="10" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1"></a>robj <span class="op">=</span> R<span class="st">"z"</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">rcopy</span>(robj)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>5.0</code></pre>
+</div>
+</div>
 </section>
+</section>
+<section id="plotting-with-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="plotting-with-ggplot2">Plotting with ggplot2</h2>
+<div id="12" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1"></a>R<span class="st">"""</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="st">library(ggplot2)</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="st">data(diamonds)</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="st">p &lt;- ggplot(diamonds, aes(x=carat, y=price)) + geom_point()</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="st">ggsave('diamonds_plot.png', p, width=6, height=4, dpi=150)</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="st">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><img src="diamonds_plot.png" class="img-fluid"></p>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
@@ -296,6 +329,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 
 </main> <!-- /main -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const meta = document.querySelector('.quarto-title-meta');
+    const main = document.querySelector('main.content');
+    if (meta && main) main.appendChild(meta);
+  });
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -312,7 +312,7 @@ Tip
 <span id="cb10-8"><a href="#cb10-8"></a>data <span class="op">=</span> <span class="fu">randn</span>(<span class="fl">10</span><span class="op">^</span><span class="fl">6</span>);</span>
 <span id="cb10-9"><a href="#cb10-9"></a><span class="pp">@time</span> <span class="fu">add100_slow!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.654274 seconds (239.40 k allocations: 774.791 MiB, 68.93% gc time, 11.43% compilation time)</code></pre>
+<pre><code>  0.674279 seconds (239.40 k allocations: 774.794 MiB, 72.09% gc time, 10.90% compilation time)</code></pre>
 </div>
 </div>
 <p><strong>Problems identified:</strong></p>
@@ -331,7 +331,7 @@ Tip
 <span id="cb12-4"><a href="#cb12-4"></a></span>
 <span id="cb12-5"><a href="#cb12-5"></a><span class="pp">@time</span> <span class="fu">add100_fast!</span>(data);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  0.023019 seconds (109.85 k allocations: 5.465 MiB, 98.53% compilation time)</code></pre>
+<pre><code>  0.021860 seconds (109.85 k allocations: 5.465 MiB, 98.85% compilation time)</code></pre>
 </div>
 </div>
 <hr>
@@ -349,26 +349,26 @@ Tip
 <span id="cb14-4"><a href="#cb14-4"></a>y <span class="op">=</span> <span class="fu">sin</span>.(<span class="fu">abs</span>.(x)) <span class="op">.+</span> <span class="fl">1</span> <span class="op">./</span> (<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>100-element Vector{Float64}:
- 1.0436711396434621
- 1.488860696088759
- 1.1588279842851374
- 0.3875656829581255
- 1.1200733800462561
- 0.6642365649674812
- 0.9406042888385351
- 0.1271254894680726
- 0.7682280508499082
- 0.6340598983852705
+ 1.0301276064973934
+ 1.3346525236905658
+ 0.9545588616983962
+ 0.9606027341442998
+ 1.0331895261649688
+ 0.6053268084432174
+ 1.0262242454732222
+ 1.005335439649936
+ 0.42695999607626384
+ 0.9762755589611647
  ⋮
- 0.4065065225512069
- 0.11267645134518546
- 0.2642917691404014
- 0.6361712152732573
- 0.03908343583974342
- 0.08888201524535419
- 0.355530049583456
- 0.44170429962147967
- 0.9450970769817278</code></pre>
+ 0.14731715258009556
+ 0.48045924953026564
+ 0.8883931680589298
+ 0.7254725967930264
+ 0.8270667985754504
+ 0.788538287684886
+ 0.5317893698342574
+ 0.9409477171921796
+ 0.6586322371392586</code></pre>
 </div>
 </div>
 </section>
@@ -408,9 +408,9 @@ Tip
 <span id="cb20-5"><a href="#cb20-5"></a><span class="fu">view</span>(x, <span class="op">:</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>)    <span class="co"># View — no copy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3×2 view(::Matrix{Float64}, :, 1:2) with eltype Float64:
-  0.390288  -0.255508
- -0.331239  -1.73403
-  1.71882   -2.07083</code></pre>
+ -2.99606     0.0854247
+ -0.0899695   0.278193
+ -0.521317   -0.709343</code></pre>
 </div>
 </div>
 <p><strong>Access Elements Sequentially:</strong></p>
@@ -441,6 +441,13 @@ Tip
 </section>
 
 </main> <!-- /main -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const meta = document.querySelector('.quarto-title-meta');
+    const main = document.querySelector('main.content');
+    if (meta && main) main.appendChild(meta);
+  });
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

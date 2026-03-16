@@ -111,11 +111,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a>
+  <li><a href="#welcome-to-julia-for-data-science" id="toc-welcome-to-julia-for-data-science" class="nav-link active" data-scroll-target="#welcome-to-julia-for-data-science">Welcome to Julia for Data Science</a>
   <ul class="collapse">
-  <li><a href="#what-brought-you-here" id="toc-what-brought-you-here" class="nav-link" data-scroll-target="#what-brought-you-here">What Brought You Here?</a></li>
-  <li><a href="#thanks" id="toc-thanks" class="nav-link" data-scroll-target="#thanks">Thanks!</a></li>
-  <li><a href="#sign-up-for-more-like-this." id="toc-sign-up-for-more-like-this." class="nav-link" data-scroll-target="#sign-up-for-more-like-this.">Sign up for more like this.</a></li>
+  <li><a href="#a-new-home" id="toc-a-new-home" class="nav-link" data-scroll-target="#a-new-home">A New Home</a></li>
+  <li><a href="#stay-updated" id="toc-stay-updated" class="nav-link" data-scroll-target="#stay-updated">Stay Updated</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -153,35 +152,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1">
-<h1>Welcome!</h1>
-<p>Thanks for checking out the Julia for Data Science Newsletter!</p>
-<p>We post high-quality articles to help you learn Julia with an emphasis on data science. Articles range from:</p>
+<section id="welcome-to-julia-for-data-science" class="level1">
+<h1>Welcome to Julia for Data Science</h1>
+<p>Julia for Data Science started in 2021 as a newsletter hosted on Ghost — a subscription platform for independent publishers. The goal was simple: high-quality articles to help people learn Julia with an emphasis on data science, covering topics like performance tips, package tours, and hands-on tutorials.</p>
+<section id="a-new-home" class="level2">
+<h2 class="anchored" data-anchor-id="a-new-home">A New Home</h2>
+<p>In 2025, the site moved from Ghost to <a href="https://quarto.org">Quarto</a>, an open-source scientific publishing system. The motivations were straightforward:</p>
 <ul>
-<li>Installing and Setting Up Julia.</li>
-<li>Performance Tips.</li>
-<li>Tours of Cool Julia Packages.</li>
-<li>In-Depth Tutorials.</li>
-<li>And more!</li>
+<li><strong>No vendor lock-in</strong> — content lives in plain Markdown files under version control</li>
+<li><strong>Free to host</strong> — deployed to GitHub Pages via GitHub Actions</li>
+<li><strong>Better for technical content</strong> — native support for executable Julia code, LaTeX math, and syntax highlighting</li>
 </ul>
-<section id="what-brought-you-here" class="level2">
-<h2 class="anchored" data-anchor-id="what-brought-you-here">What Brought You Here?</h2>
-<p>We want to know! We’re just starting out and would love to hear what you want to learn about. Contact us at:</p>
-<p>Twitter: <a href="https://twitter.com/JuliaForDataSci"><span class="citation" data-cites="JuliaForDataSci">@JuliaForDataSci</span></a></p>
+<p>All posts from the Ghost era have been preserved and are still available here.</p>
 </section>
-<section id="thanks" class="level2">
-<h2 class="anchored" data-anchor-id="thanks">Thanks!</h2>
-<p>Thanks for checking out Julia For Data Science.</p>
-</section>
-<section id="sign-up-for-more-like-this." class="level2">
-<h2 class="anchored" data-anchor-id="sign-up-for-more-like-this.">Sign up for more like this.</h2>
-<p>Enter your email Subscribe</p>
+<section id="stay-updated" class="level2">
+<h2 class="anchored" data-anchor-id="stay-updated">Stay Updated</h2>
+<p>The newsletter is no more, but you can follow along via the <a href="../../../index.xml">RSS feed</a> — subscribe in your feed reader of choice to get notified when new posts go up.</p>
+<p>You can also reach out on Twitter: <a href="https://twitter.com/JuliaForDataSci"><span class="citation" data-cites="JuliaForDataSci">@JuliaForDataSci</span></a></p>
 
 
 </section>
 </section>
 
 </main> <!-- /main -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const meta = document.querySelector('.quarto-title-meta');
+    const main = document.querySelector('main.content');
+    if (meta && main) main.appendChild(meta);
+  });
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
