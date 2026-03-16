@@ -217,10 +217,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
-   1883.7 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerTablesExt<span class="ansi-bright-black-fg"> (serial)</span>
+   1977.5 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerTablesExt<span class="ansi-bright-black-fg"> (serial)</span>
   1 dependency successfully precompiled in 2 seconds
 <span class="ansi-green-fg ansi-bold">Precompiling</span> packages...
-    910.1 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerLaTeXStringsExt<span class="ansi-bright-black-fg"> (serial)</span>
+    970.3 ms<span class="ansi-green-fg">  ✓ </span>QuartoNotebookWorkerLaTeXStringsExt<span class="ansi-bright-black-fg"> (serial)</span>
   1 dependency successfully precompiled in 1 seconds
 </pre>
 </div>
@@ -333,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("http:\/\/juliafordatascience\.com");
+        var filterRegex = new RegExp("https:\/\/juliafordatascience\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

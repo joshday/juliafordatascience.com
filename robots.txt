@@ -1,1 +1,1 @@
-Sitemap: http://juliafordatascience.com/sitemap.xml
+Sitemap: https://juliafordatascience.com/sitemap.xml
