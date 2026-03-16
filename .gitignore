@@ -4,5 +4,8 @@
 *Manifest.toml
 **/*.quarto_ipynb
 *.html
+!assets/html/*.html
 *site_libs
 *.png
+!assets/images/*.png
+!assets/images/*.svg
