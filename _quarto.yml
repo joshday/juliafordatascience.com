@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Julia for Data Science"
-  site-url: http://juliafordatascience.com
+  site-url: https://juliafordatascience.com
   draft-mode: visible
   search:
     type: textbox
