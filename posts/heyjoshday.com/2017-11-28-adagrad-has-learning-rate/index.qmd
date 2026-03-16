@@ -1,6 +1,5 @@
 ---
 date: 2017-11-28
-categories: [heyjoshday.com]
 draft: false
 ---
 

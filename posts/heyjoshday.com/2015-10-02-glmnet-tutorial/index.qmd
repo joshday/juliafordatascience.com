@@ -1,6 +1,5 @@
 ---
 date: 2015-10-02
-categories: [R, heyjoshday.com]
 draft: false
 image: https://towardsdatascience.com/wp-content/uploads/2020/11/1nrWncnoJ4V_BkzEf1pd4MA.png
 ---

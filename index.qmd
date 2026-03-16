@@ -1,22 +1,22 @@
 ---
 pagetitle: "Julia for Data Science"
+toc: false
 listing:
   contents: ["posts/*.qmd", "posts/*/*.qmd", "posts/*/*/*.qmd"]
   type: default # or `default` or `table`; each type has its own set of yaml options to include
   sort: "date desc" # can also sort on more than one field
   categories: false
-  fields: [image, title, date, categories, reading-time]
+  fields: [title, date, reading-time]
+  date-format: "MMM YYYY"
   feed: true
   table-hover: true
-  sort-ui: false
-  filter-ui: false
-  image-height: 150px
-  image-placeholder: /assets/images/hero_bg.svg
+  sort-ui: true
+  filter-ui: true
 ---
 
 
 ```{=html}
-<div class="bg-primary img-rounded" style="margin-bottom:16px;border-radius:16px;background-image:url(/assets/images/topography.svg);display:flex;justify-content:center;align-items:center;">
+<div style="margin-bottom:16px;border-radius:16px;background-color:#fff;background-image:url(/assets/images/topography.svg);display:flex;justify-content:center;align-items:center;">
   <img src="/assets/images/hero_img.png" style="height:128px; margin: 10% 10% 10% 10%;">
 </div>
 ```

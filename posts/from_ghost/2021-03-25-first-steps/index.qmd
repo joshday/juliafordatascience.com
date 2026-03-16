@@ -1,6 +1,5 @@
 ---
 date: 2021-03-25
-categories: [first steps, quickstart, primer]
 image: https://images.unsplash.com/photo-1558395556-da76deb52b24
 ---
 

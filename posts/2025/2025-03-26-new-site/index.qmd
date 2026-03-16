@@ -1,7 +1,6 @@
 ---
 date: 2025-03-26
 draft: false
-categories: [announcement]
 image: https://images.unsplash.com/photo-1620924049153-4d32fcbe88fe?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 

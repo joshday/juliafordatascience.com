@@ -1,6 +1,5 @@
 ---
 date: 2021-08-17
-categories: [JuliaCon, talks, data science]
 image: https://images.unsplash.com/photo-1540575467063-178a50c2df87
 ---
 

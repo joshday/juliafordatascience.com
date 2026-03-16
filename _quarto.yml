@@ -9,8 +9,7 @@ website:
     type: textbox
   navbar:
     background: light
-    left:
-      - about.qmd
+    left: []
     tools:
       - icon: rss
         href: /index.xml
@@ -34,3 +33,5 @@ format:
       # - https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
       - assets/custom.css
     toc: true
+    html-math-method: katex
+    include-after-body: assets/html/post-meta-footer.html

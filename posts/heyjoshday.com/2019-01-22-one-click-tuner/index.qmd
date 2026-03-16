@@ -1,6 +1,5 @@
 ---
 date: 2019-01-22
-categories: [heyjoshday.com]
 draft: false
 image: https://github.com/user-attachments/assets/64afef93-1ed3-4c83-bf48-fa7390d11515
 ---

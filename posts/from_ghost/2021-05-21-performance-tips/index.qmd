@@ -1,6 +1,5 @@
 ---
 date: 2021-05-21
-categories: [performance, Julia]
 image: https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4
 engine: julia
 ---

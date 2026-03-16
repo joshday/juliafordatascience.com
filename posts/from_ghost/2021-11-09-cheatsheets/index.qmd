@@ -1,6 +1,5 @@
 ---
 date: 2021-11-09
-categories: [cheatsheet, resources]
 image: https://images.unsplash.com/photo-1456324504439-367cee3b3c32
 ---
 

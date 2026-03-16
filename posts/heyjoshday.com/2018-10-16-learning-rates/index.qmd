@@ -1,6 +1,5 @@
 ---
 date: 2018-10-16
-categories: [heyjoshday.com]
 draft: false
 ---
 

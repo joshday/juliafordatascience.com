@@ -1,6 +1,5 @@
 ---
 date: 2018-08-17
-categories: [heyjoshday.com]
 draft: false
 image: https://github.com/JuliaLang/julia-logo-graphics/raw/master/images/julia-language-logo-white-border.svg
 engine: julia

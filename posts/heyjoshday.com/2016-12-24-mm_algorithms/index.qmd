@@ -1,6 +1,5 @@
 ---
 date: 2016-12-24
-categories: [MM algorithms, logistic regression, heyjoshday.com]
 draft: false
 ---
 
